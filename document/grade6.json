@@ -1,0 +1,3089 @@
+{
+  "gradeName": "六年級",
+  "weeks": [
+    {
+      "week": 1,
+      "content": [
+        {
+          "word": "ride",
+          "phonetic": "/raɪd/",
+          "pos": "v.",
+          "chinese": "騎",
+          "sentence": "Little Tammy is riding a tricycle."
+        },
+        {
+          "word": "finish",
+          "phonetic": "/ˈfɪnɪʃ/",
+          "pos": "v.",
+          "chinese": "完成",
+          "sentence": "When will the concert finish?"
+        },
+        {
+          "word": "except",
+          "phonetic": "/ɪkˈsɛpt/",
+          "pos": "prep.",
+          "chinese": "除了",
+          "sentence": "We all went except John."
+        },
+        {
+          "word": "speak",
+          "phonetic": "/spik/",
+          "pos": "v.",
+          "chinese": "說",
+          "sentence": "Do you speak French?"
+        },
+        {
+          "word": "insect",
+          "phonetic": "/ˈɪnsɛkt/",
+          "pos": "n.",
+          "chinese": "昆蟲",
+          "sentence": "The butterfly is a beautiful insect."
+        },
+        {
+          "word": "cellphone",
+          "phonetic": "/ˈsɛlfoʊn/",
+          "pos": "n.",
+          "chinese": "手機",
+          "sentence": "I like my red cell phone."
+        },
+        {
+          "word": "eleven",
+          "phonetic": "/ɪˈlɛvən/",
+          "pos": "num.",
+          "chinese": "十一",
+          "sentence": "Elbert wins eleven games this year."
+        },
+        {
+          "word": "mountain",
+          "phonetic": "/ˈmaʊntən/",
+          "pos": "n.",
+          "chinese": "山",
+          "sentence": "Qomolangma is the highest mountain in the world."
+        },
+        {
+          "word": "science",
+          "phonetic": "/ˈsaɪəns/",
+          "pos": "n.",
+          "chinese": "科學",
+          "sentence": "Ms. Wood is a woman of science."
+        },
+        {
+          "word": "button",
+          "phonetic": "/ˈbʌtən/",
+          "pos": "n.",
+          "chinese": "按鈕",
+          "sentence": "Gently press the button."
+        },
+        {
+          "word": "curtain",
+          "phonetic": "/ˈkɜrtən/",
+          "pos": "n.",
+          "chinese": "窗簾",
+          "sentence": "The red curtain is covering the stage."
+        },
+        {
+          "word": "certain",
+          "phonetic": "/ˈsɜrtən/",
+          "pos": "adj.",
+          "chinese": "確定的",
+          "sentence": "She is certain that he left his keys at home."
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "content": [
+        {
+          "word": "you",
+          "phonetic": "/ju/",
+          "pos": "pron.",
+          "chinese": "你",
+          "sentence": "Are you twins?"
+        },
+        {
+          "word": "maybe",
+          "phonetic": "/ˈmeɪbi/",
+          "pos": "adv.",
+          "chinese": "也許",
+          "sentence": "It is cloudy. Maybe it is going to rain."
+        },
+        {
+          "word": "matter",
+          "phonetic": "/ˈmætər/",
+          "pos": "n.",
+          "chinese": "事情",
+          "sentence": "What's the matter with the camera?"
+        },
+        {
+          "word": "clothes",
+          "phonetic": "/kloʊðz/",
+          "pos": "n.",
+          "chinese": "衣服",
+          "sentence": "Mum irons her clothes."
+        },
+        {
+          "word": "road",
+          "phonetic": "/roʊd/",
+          "pos": "n.",
+          "chinese": "路",
+          "sentence": "Where does this road lead to?"
+        },
+        {
+          "word": "color",
+          "phonetic": "/ˈkʌlər/",
+          "pos": "n.",
+          "chinese": "顏色",
+          "sentence": "The color of leaves is green in summer."
+        },
+        {
+          "word": "since",
+          "phonetic": "/sɪns/",
+          "pos": "prep.",
+          "chinese": "自從",
+          "sentence": "I have never seen snow since I was born."
+        },
+        {
+          "word": "fresh",
+          "phonetic": "/frɛʃ/",
+          "pos": "adj.",
+          "chinese": "新鮮的",
+          "sentence": "I prefer fresh pork to bacon."
+        },
+        {
+          "word": "friend",
+          "phonetic": "/frɛnd/",
+          "pos": "n.",
+          "chinese": "朋友",
+          "sentence": "A friend in need is a friend indeed."
+        },
+        {
+          "word": "cotton",
+          "phonetic": "/ˈkɑtən/",
+          "pos": "n.",
+          "chinese": "棉花",
+          "sentence": "His shirt is made of cotton."
+        },
+        {
+          "word": "colon",
+          "phonetic": "/ˈkoʊlən/",
+          "pos": "n.",
+          "chinese": "冒號",
+          "sentence": "He doesn't know how to use a colon in a sentence."
+        },
+        {
+          "word": "kitten",
+          "phonetic": "/ˈkɪtən/",
+          "pos": "n.",
+          "chinese": "小貓",
+          "sentence": "The kitten is looking for her mother."
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "content": [
+        {
+          "word": "twice",
+          "phonetic": "/twaɪs/",
+          "pos": "adv.",
+          "chinese": "兩次",
+          "sentence": "We go to the market twice a week."
+        },
+        {
+          "word": "centimeter,cm",
+          "phonetic": "/ˈsɛntəˌmitər/",
+          "pos": "n.",
+          "chinese": "公分",
+          "sentence": "I am one hundred and forty centimeters high."
+        },
+        {
+          "word": "fruit",
+          "phonetic": "/frut/",
+          "pos": "n.",
+          "chinese": "水果",
+          "sentence": "What fruits are in season now?"
+        },
+        {
+          "word": "will",
+          "phonetic": "/wɪl/",
+          "pos": "aux.",
+          "chinese": "將會",
+          "sentence": "The weatherman says that it will rain tomorrow."
+        },
+        {
+          "word": "heart",
+          "phonetic": "/hɑrt/",
+          "pos": "n.",
+          "chinese": "心",
+          "sentence": "Her heart beat fast when she received the letter."
+        },
+        {
+          "word": "order",
+          "phonetic": "/ˈɔrdər/",
+          "pos": "v.",
+          "chinese": "點餐",
+          "sentence": "I would like to order a fish."
+        },
+        {
+          "word": "violin",
+          "phonetic": "/ˌvaɪəˈlɪn/",
+          "pos": "n.",
+          "chinese": "小提琴",
+          "sentence": "I have learned to play the violin for years."
+        },
+        {
+          "word": "cousin",
+          "phonetic": "/ˈkʌzən/",
+          "pos": "n.",
+          "chinese": "表兄弟姊妹",
+          "sentence": "He is my cousin."
+        },
+        {
+          "word": "carton",
+          "phonetic": "/ˈkɑrtən/",
+          "pos": "n.",
+          "chinese": "紙盒",
+          "sentence": "I bought a carton of milk from the grocery store."
+        },
+        {
+          "word": "poison",
+          "phonetic": "/ˈpɔɪzən/",
+          "pos": "n.",
+          "chinese": "毒",
+          "sentence": "Don't go near the snake. It has poison."
+        },
+        {
+          "word": "muffin",
+          "phonetic": "/ˈmʌfɪn/",
+          "pos": "n.",
+          "chinese": "瑪芬蛋糕",
+          "sentence": "I like buying muffins at the bakery."
+        },
+        {
+          "word": "pumpkin",
+          "phonetic": "/ˈpʌmpkɪn/",
+          "pos": "n.",
+          "chinese": "南瓜",
+          "sentence": "Let's make a pumpkin lantern."
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "content": [
+        {
+          "word": "twelve",
+          "phonetic": "/twɛlv/",
+          "pos": "num.",
+          "chinese": "十二",
+          "sentence": "There are twelve months in a year."
+        },
+        {
+          "word": "type",
+          "phonetic": "/taɪp/",
+          "pos": "n.",
+          "chinese": "類型",
+          "sentence": "What type of painting do you like?"
+        },
+        {
+          "word": "across",
+          "phonetic": "/əˈkrɔs/",
+          "pos": "prep.",
+          "chinese": "穿過",
+          "sentence": "I live across the toy store."
+        },
+        {
+          "word": "tomorrow",
+          "phonetic": "/təˈmɑroʊ/",
+          "pos": "adv.",
+          "chinese": "明天",
+          "sentence": "I'm going to take an airplane tomorrow."
+        },
+        {
+          "word": "during",
+          "phonetic": "/ˈdʊrɪŋ/",
+          "pos": "prep.",
+          "chinese": "在...期間",
+          "sentence": "I was hospitalized during winter vacation."
+        },
+        {
+          "word": "need",
+          "phonetic": "/nid/",
+          "pos": "v.",
+          "chinese": "需要",
+          "sentence": "Plant needs water."
+        },
+        {
+          "word": "smile",
+          "phonetic": "/smaɪl/",
+          "pos": "n.",
+          "chinese": "微笑",
+          "sentence": "Ted welcome me with a smile."
+        },
+        {
+          "word": "special",
+          "phonetic": "/ˈspɛʃəl/",
+          "pos": "adj.",
+          "chinese": "特別的",
+          "sentence": "What are you special interests?"
+        },
+        {
+          "word": "nail",
+          "phonetic": "/neɪl/",
+          "pos": "n.",
+          "chinese": "指甲",
+          "sentence": "Lend me your nail scissors, please."
+        },
+        {
+          "word": "festival",
+          "phonetic": "/ˈfɛstəvəl/",
+          "pos": "n.",
+          "chinese": "節日",
+          "sentence": "Let's celebrate the Moon Festival."
+        },
+        {
+          "word": "chalk",
+          "phonetic": "/tʃɔk/",
+          "pos": "n.",
+          "chinese": "粉筆",
+          "sentence": "There is a lot of chalk dust on his jacket."
+        },
+        {
+          "word": "already",
+          "phonetic": "/ɔlˈrɛdi/",
+          "pos": "adv.",
+          "chinese": "已經",
+          "sentence": "He has been late already."
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "content": [
+        {
+          "word": "a few",
+          "phonetic": "/ə fju/",
+          "pos": "det.",
+          "chinese": "一些(可數)",
+          "sentence": "A few teachers know her name."
+        },
+        {
+          "word": "twenty",
+          "phonetic": "/ˈtwɛnti/",
+          "pos": "num.",
+          "chinese": "二十",
+          "sentence": "Could you wait for me just twenty minutes?"
+        },
+        {
+          "word": "ago",
+          "phonetic": "/əˈgoʊ/",
+          "pos": "adv.",
+          "chinese": "以前",
+          "sentence": "The airplane took off about an hour ago."
+        },
+        {
+          "word": "happen",
+          "phonetic": "/ˈhæpən/",
+          "pos": "v.",
+          "chinese": "發生",
+          "sentence": "A funny thing happened in the subway yesterday."
+        },
+        {
+          "word": "windy",
+          "phonetic": "/ˈwɪndi/",
+          "pos": "adj.",
+          "chinese": "多風的",
+          "sentence": "It is windy today."
+        },
+        {
+          "word": "remember",
+          "phonetic": "/rɪˈmɛmbər/",
+          "pos": "v.",
+          "chinese": "記得",
+          "sentence": "Remember to phone me."
+        },
+        {
+          "word": "key",
+          "phonetic": "/ki/",
+          "pos": "n.",
+          "chinese": "鑰匙",
+          "sentence": "We lost the key for Room 411."
+        },
+        {
+          "word": "fossil",
+          "phonetic": "/ˈfɑsəl/",
+          "pos": "n.",
+          "chinese": "化石",
+          "sentence": "The museum displayed a fossil of a dinosaur."
+        },
+        {
+          "word": "several",
+          "phonetic": "/ˈsɛvrəl/",
+          "pos": "det.",
+          "chinese": "幾個",
+          "sentence": "Nancy has written several books about dinosaurs."
+        },
+        {
+          "word": "normal",
+          "phonetic": "/ˈnɔrməl/",
+          "pos": "adj.",
+          "chinese": "正常的",
+          "sentence": "His temperature is normal. He is not sick."
+        },
+        {
+          "word": "illegal",
+          "phonetic": "/ɪˈligəl/",
+          "pos": "adj.",
+          "chinese": "非法的",
+          "sentence": "Don't do anything illegal."
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "content": [
+        {
+          "word": "thirty",
+          "phonetic": "/ˈθɜrti/",
+          "pos": "num.",
+          "chinese": "三十",
+          "sentence": "Mark has invented thirty machines."
+        },
+        {
+          "word": "a lot of",
+          "phonetic": "/ə lɑt ʌv/",
+          "pos": "det.",
+          "chinese": "很多(可數/不可數)",
+          "sentence": "There are a lot of flowers in the garden."
+        },
+        {
+          "word": "anyone",
+          "phonetic": "/ˈɛniˌwʌn/",
+          "pos": "pron.",
+          "chinese": "任何人",
+          "sentence": "I didn't tell anyone but you."
+        },
+        {
+          "word": "enjoy",
+          "phonetic": "/ɛnˈdʒɔɪ/",
+          "pos": "v.",
+          "chinese": "享受",
+          "sentence": "She enjoys swimming."
+        },
+        {
+          "word": "course",
+          "phonetic": "/kɔrs/",
+          "pos": "n.",
+          "chinese": "課程",
+          "sentence": "I take a course in dancing."
+        },
+        {
+          "word": "appear",
+          "phonetic": "/əˈpɪr/",
+          "pos": "v.",
+          "chinese": "出現",
+          "sentence": "A ship appears on the sea."
+        },
+        {
+          "word": "healthy",
+          "phonetic": "/ˈhɛlθi/",
+          "pos": "adj.",
+          "chinese": "健康的",
+          "sentence": "It is healthy to eat fruit."
+        },
+        {
+          "word": "lion",
+          "phonetic": "/ˈlaɪən/",
+          "pos": "n.",
+          "chinese": "獅子",
+          "sentence": "The girl was frightened by the lion roar."
+        },
+        {
+          "word": "evil",
+          "phonetic": "/ˈivəl/",
+          "pos": "adj.",
+          "chinese": "邪惡的",
+          "sentence": "What he did was pure evil."
+        },
+        {
+          "word": "hill",
+          "phonetic": "/hɪl/",
+          "pos": "n.",
+          "chinese": "山丘",
+          "sentence": "The hill has been covered with trees."
+        },
+        {
+          "word": "mobile",
+          "phonetic": "/ˈmoʊbəl/",
+          "pos": "adj.",
+          "chinese": "行動的",
+          "sentence": "She did not give him her mobile number."
+        },
+        {
+          "word": "panther",
+          "phonetic": "/ˈpænθər/",
+          "pos": "n.",
+          "chinese": "黑豹",
+          "sentence": "The panther's speed is admirable."
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "content": [
+        {
+          "word": "business",
+          "phonetic": "/ˈbɪznəs/",
+          "pos": "n.",
+          "chinese": "生意",
+          "sentence": "\"How is your business?\"\"Not good.\""
+        },
+        {
+          "word": "excuse",
+          "phonetic": "/ɪkˈskjus/",
+          "pos": "v.",
+          "chinese": "原諒",
+          "sentence": "Excuse me for being late."
+        },
+        {
+          "word": "jacket",
+          "phonetic": "/ˈdʒækɪt/",
+          "pos": "n.",
+          "chinese": "夾克",
+          "sentence": "He is wearing a black jacket."
+        },
+        {
+          "word": "money",
+          "phonetic": "/ˈmʌni/",
+          "pos": "n.",
+          "chinese": "錢",
+          "sentence": "Sara's uncle donated a lot of money to our school."
+        },
+        {
+          "word": "vest",
+          "phonetic": "/vɛst/",
+          "pos": "n.",
+          "chinese": "背心",
+          "sentence": "The vest matches your shirt well."
+        },
+        {
+          "word": "above",
+          "phonetic": "/əˈbʌv/",
+          "pos": "prep.",
+          "chinese": "在...之上",
+          "sentence": "The sun rises above the hill."
+        },
+        {
+          "word": "interview",
+          "phonetic": "/ˈɪntərˌvju/",
+          "pos": "n.",
+          "chinese": "面試",
+          "sentence": "My homework is to interview my grandfather."
+        },
+        {
+          "word": "oval",
+          "phonetic": "/ˈoʊvəl/",
+          "pos": "adj.",
+          "chinese": "橢圓形的",
+          "sentence": "The shape of an egg is oval."
+        },
+        {
+          "word": "national",
+          "phonetic": "/ˈnæʃənəl/",
+          "pos": "adj.",
+          "chinese": "國家的",
+          "sentence": "How many national parks are there in Taiwan?"
+        },
+        {
+          "word": "channel",
+          "phonetic": "/ˈtʃænəl/",
+          "pos": "n.",
+          "chinese": "頻道",
+          "sentence": "I like watching the sports channel."
+        },
+        {
+          "word": "personal",
+          "phonetic": "/ˈpɜrsənəl/",
+          "pos": "adj.",
+          "chinese": "個人的",
+          "sentence": "This book is my personal belonging."
+        },
+        {
+          "word": "towel",
+          "phonetic": "/ˈtaʊəl/",
+          "pos": "n.",
+          "chinese": "毛巾",
+          "sentence": "I saw her wringing a towel."
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "content": [
+        {
+          "word": "lettuce",
+          "phonetic": "/ˈlɛtəs/",
+          "pos": "n.",
+          "chinese": "萵苣",
+          "sentence": "I made a lettuce salad for you."
+        },
+        {
+          "word": "sore",
+          "phonetic": "/sɔr/",
+          "pos": "adj.",
+          "chinese": "疼痛的",
+          "sentence": "The patient has a sore throat."
+        },
+        {
+          "word": "slow",
+          "phonetic": "/sloʊ/",
+          "pos": "adj.",
+          "chinese": "慢的",
+          "sentence": "People think he is a slow runner."
+        },
+        {
+          "word": "square",
+          "phonetic": "/skwɛr/",
+          "pos": "n.",
+          "chinese": "正方形",
+          "sentence": "There is a square with trees and grass in the center of the city."
+        },
+        {
+          "word": "vegetable",
+          "phonetic": "/ˈvɛdʒtəbəl/",
+          "pos": "n.",
+          "chinese": "蔬菜",
+          "sentence": "We use vegetable oil for cooking."
+        },
+        {
+          "word": "terrible",
+          "phonetic": "/ˈtɛrəbəl/",
+          "pos": "adj.",
+          "chinese": "糟糕的",
+          "sentence": "Her writing is terrible."
+        },
+        {
+          "word": "bicycle",
+          "phonetic": "/ˈbaɪsɪkəl/",
+          "pos": "n.",
+          "chinese": "腳踏車",
+          "sentence": "I can ride a bicycle."
+        },
+        {
+          "word": "able",
+          "phonetic": "/ˈeɪbəl/",
+          "pos": "adj.",
+          "chinese": "能夠",
+          "sentence": "Allen is an able man."
+        },
+        {
+          "word": "noodle",
+          "phonetic": "/ˈnudəl/",
+          "pos": "n.",
+          "chinese": "麵條",
+          "sentence": "Mike likes noodles more than rice."
+        },
+        {
+          "word": "temple",
+          "phonetic": "/ˈtɛmpəl/",
+          "pos": "n.",
+          "chinese": "寺廟",
+          "sentence": "There are monks in this temple."
+        },
+        {
+          "word": "a little",
+          "phonetic": "/ə ˈlɪtəl/",
+          "pos": "adv.",
+          "chinese": "一點點",
+          "sentence": "He can speak a little English."
+        },
+        {
+          "word": "apple",
+          "phonetic": "/ˈæpəl/",
+          "pos": "n.",
+          "chinese": "蘋果",
+          "sentence": "Jim likes apples most."
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "content": [
+        {
+          "word": "thousand",
+          "phonetic": "/ˈθaʊzənd/",
+          "pos": "num.",
+          "chinese": "千",
+          "sentence": "Thousands of people lost their homes in the floods."
+        },
+        {
+          "word": "afraid",
+          "phonetic": "/əˈfreɪd/",
+          "pos": "adj.",
+          "chinese": "害怕的",
+          "sentence": "Children are afraid of snakes."
+        },
+        {
+          "word": "dinner",
+          "phonetic": "/ˈdɪnər/",
+          "pos": "n.",
+          "chinese": "晚餐",
+          "sentence": "It's time for dinner."
+        },
+        {
+          "word": "dining room",
+          "phonetic": "/ˈdaɪnɪŋˌrum/",
+          "pos": "n.",
+          "chinese": "飯廳",
+          "sentence": "My father has lunch at the staff dining room everyday."
+        },
+        {
+          "word": "restaurant",
+          "phonetic": "/ˈrɛstəˌrɑnt/",
+          "pos": "n.",
+          "chinese": "餐廳",
+          "sentence": "Trains usually have a restaurant car."
+        },
+        {
+          "word": "river",
+          "phonetic": "/ˈrɪvər/",
+          "pos": "n.",
+          "chinese": "河流",
+          "sentence": "The river flows through a desert."
+        },
+        {
+          "word": "subject",
+          "phonetic": "/ˈsʌbdʒɪkt/",
+          "pos": "n.",
+          "chinese": "科目",
+          "sentence": "PE is my favorite subject."
+        },
+        {
+          "word": "signature",
+          "phonetic": "/ˈsɪgnətʃər/",
+          "pos": "n.",
+          "chinese": "簽名",
+          "sentence": "Please write down your signature here."
+        },
+        {
+          "word": "furniture",
+          "phonetic": "/ˈfɜrnɪtʃər/",
+          "pos": "n.",
+          "chinese": "家具",
+          "sentence": "I have a lot of furniture at home."
+        },
+        {
+          "word": "departure",
+          "phonetic": "/dɪˈpɑrtʃər/",
+          "pos": "n.",
+          "chinese": "出發",
+          "sentence": "The departure time is 11:00 o'clock."
+        },
+        {
+          "word": "capture",
+          "phonetic": "/ˈkæptʃər/",
+          "pos": "v.",
+          "chinese": "捕捉",
+          "sentence": "Please capture a lot of photos."
+        },
+        {
+          "word": "nature",
+          "phonetic": "/ˈneɪtʃər/",
+          "pos": "n.",
+          "chinese": "自然",
+          "sentence": "We raises silkworms in nature class."
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "content": [
+        {
+          "word": "fourteen",
+          "phonetic": "/ˌfɔrˈtin/",
+          "pos": "num.",
+          "chinese": "十四",
+          "sentence": "There are fourteen leaves on the tree."
+        },
+        {
+          "word": "plate",
+          "phonetic": "/pleɪt/",
+          "pos": "n.",
+          "chinese": "盤子",
+          "sentence": "Jill did not finish her food on the plate."
+        },
+        {
+          "word": "rainy",
+          "phonetic": "/ˈreɪni/",
+          "pos": "adj.",
+          "chinese": "下雨的",
+          "sentence": "Bring an umbrella. It's rainy today."
+        },
+        {
+          "word": "beef",
+          "phonetic": "/bif/",
+          "pos": "n.",
+          "chinese": "牛肉",
+          "sentence": "My grandma likes stewed beef."
+        },
+        {
+          "word": "player",
+          "phonetic": "/ˈpleɪər/",
+          "pos": "n.",
+          "chinese": "選手",
+          "sentence": "Cindy is an excellent tennis player."
+        },
+        {
+          "word": "fry",
+          "phonetic": "/fraɪ/",
+          "pos": "v.",
+          "chinese": "油炸",
+          "sentence": "The cook is frying a fish."
+        },
+        {
+          "word": "sentence",
+          "phonetic": "/ˈsɛntəns/",
+          "pos": "n.",
+          "chinese": "句子",
+          "sentence": "The words in the sentence are difficult."
+        },
+        {
+          "word": "pitcher",
+          "phonetic": "/ˈpɪtʃər/",
+          "pos": "n.",
+          "chinese": "投手",
+          "sentence": "The pitcher threw a fast ball."
+        },
+        {
+          "word": "catcher",
+          "phonetic": "/ˈkætʃər/",
+          "pos": "n.",
+          "chinese": "捕手",
+          "sentence": "The catcher failed to catch the ball."
+        },
+        {
+          "word": "rancher",
+          "phonetic": "/ˈræntʃər/",
+          "pos": "n.",
+          "chinese": "牧場主人",
+          "sentence": "The rancher takes care of animals."
+        },
+        {
+          "word": "bleachers",
+          "phonetic": "/ˈblitʃərz/",
+          "pos": "n.",
+          "chinese": "露天看台",
+          "sentence": "The bleachers cheered when their team scored."
+        },
+        {
+          "word": "richer",
+          "phonetic": "/ˈrɪtʃər/",
+          "pos": "adj.",
+          "chinese": "更富有的",
+          "sentence": "The richer you are the more money you have."
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "content": [
+        {
+          "word": "forty",
+          "phonetic": "/ˈfɔrti/",
+          "pos": "num.",
+          "chinese": "四十",
+          "sentence": "She writes forty books."
+        },
+        {
+          "word": "English",
+          "phonetic": "/ˈɪŋglɪʃ/",
+          "pos": "n.",
+          "chinese": "英文",
+          "sentence": "Mary speaks American English."
+        },
+        {
+          "word": "stomach",
+          "phonetic": "/ˈstʌmək/",
+          "pos": "n.",
+          "chinese": "胃",
+          "sentence": "What a stomach he has!"
+        },
+        {
+          "word": "half",
+          "phonetic": "/hæf/",
+          "pos": "n.",
+          "chinese": "一半",
+          "sentence": "The film lasted an hour and a half."
+        },
+        {
+          "word": "minute",
+          "phonetic": "/ˈmɪnɪt/",
+          "pos": "n.",
+          "chinese": "分鐘",
+          "sentence": "My house is ten minutes away from the shops."
+        },
+        {
+          "word": "polite",
+          "phonetic": "/pəˈlaɪt/",
+          "pos": "adj.",
+          "chinese": "有禮貌的",
+          "sentence": "Harry is a polite gentleman."
+        },
+        {
+          "word": "quiz",
+          "phonetic": "/kwɪz/",
+          "pos": "n.",
+          "chinese": "小考",
+          "sentence": "We have four quizzes today."
+        },
+        {
+          "word": "bakery",
+          "phonetic": "/ˈbeɪkəri/",
+          "pos": "n.",
+          "chinese": "麵包店",
+          "sentence": "She works at a bakery."
+        },
+        {
+          "word": "blusher",
+          "phonetic": "/ˈblʌʃər/",
+          "pos": "n.",
+          "chinese": "腮紅",
+          "sentence": "She uses a blusher to make her cheeks pink."
+        },
+        {
+          "word": "flasher",
+          "phonetic": "/ˈflæʃər/",
+          "pos": "n.",
+          "chinese": "閃光燈",
+          "sentence": "The alarm had a red flasher."
+        },
+        {
+          "word": "fresher",
+          "phonetic": "/ˈfrɛʃər/",
+          "pos": "adj.",
+          "chinese": "更新鮮的",
+          "sentence": "The mint leaves made the drink taste fresher."
+        },
+        {
+          "word": "usher",
+          "phonetic": "/ˈʌʃər/",
+          "pos": "n.",
+          "chinese": "引座員",
+          "sentence": "The usher guided us to our seats."
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "content": [
+        {
+          "word": "slide",
+          "phonetic": "/slaɪd/",
+          "pos": "n.",
+          "chinese": "溜滑梯",
+          "sentence": "They slide down the slide."
+        },
+        {
+          "word": "surf",
+          "phonetic": "/sɜrf/",
+          "pos": "v.",
+          "chinese": "衝浪",
+          "sentence": "The waves are too small for surfing."
+        },
+        {
+          "word": "glove",
+          "phonetic": "/glʌv/",
+          "pos": "n.",
+          "chinese": "手套",
+          "sentence": "The boxer puts on boxing gloves."
+        },
+        {
+          "word": "juice",
+          "phonetic": "/dʒus/",
+          "pos": "n.",
+          "chinese": "果汁",
+          "sentence": "One tomato juice and one soup, please."
+        },
+        {
+          "word": "moment",
+          "phonetic": "/ˈmoʊmənt/",
+          "pos": "n.",
+          "chinese": "片刻",
+          "sentence": "Just a moment, I forget where the bakery is."
+        },
+        {
+          "word": "sign",
+          "phonetic": "/saɪn/",
+          "pos": "v.",
+          "chinese": "簽名",
+          "sentence": "Please ask your parents to sign on your report card."
+        },
+        {
+          "word": "blind",
+          "phonetic": "/blaɪnd/",
+          "pos": "adj.",
+          "chinese": "盲的",
+          "sentence": "The poor boy is blind from birth."
+        },
+        {
+          "word": "barbecue",
+          "phonetic": "/ˈbɑrbɪˌkju/",
+          "pos": "n.",
+          "chinese": "烤肉",
+          "sentence": "We'll have a barbecue on the Moon Festival."
+        },
+        {
+          "word": "picture",
+          "phonetic": "/ˈpɪktʃər/",
+          "pos": "n.",
+          "chinese": "圖片",
+          "sentence": "In the picture, I painted nothing but a lovely kitten."
+        },
+        {
+          "word": "culture",
+          "phonetic": "/ˈkʌltʃər/",
+          "pos": "n.",
+          "chinese": "文化",
+          "sentence": "We need to embrace our own culture."
+        },
+        {
+          "word": "future",
+          "phonetic": "/ˈfjutʃər/",
+          "pos": "n.",
+          "chinese": "未來",
+          "sentence": "I wish you a very happy future."
+        },
+        {
+          "word": "sure",
+          "phonetic": "/ʃʊr/",
+          "pos": "adj.",
+          "chinese": "確定的",
+          "sentence": "Are you sure the house is locked?"
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "content": [
+        {
+          "word": "fifteen",
+          "phonetic": "/ˌfɪfˈtin/",
+          "pos": "num.",
+          "chinese": "十五",
+          "sentence": "There are fifteen strawberries in the box."
+        },
+        {
+          "word": "picnic",
+          "phonetic": "/ˈpɪknɪk/",
+          "pos": "n.",
+          "chinese": "野餐",
+          "sentence": "We had a picnic by the sea recently."
+        },
+        {
+          "word": "sofa",
+          "phonetic": "/ˈsoʊfə/",
+          "pos": "n.",
+          "chinese": "沙發",
+          "sentence": "Sitting in a sofa, he watched a foodfall game."
+        },
+        {
+          "word": "bag",
+          "phonetic": "/bæg/",
+          "pos": "n.",
+          "chinese": "袋子",
+          "sentence": "There is a hole in the bag."
+        },
+        {
+          "word": "dentist",
+          "phonetic": "/ˈdɛntɪst/",
+          "pos": "n.",
+          "chinese": "牙醫",
+          "sentence": "You had better go to the dentist."
+        },
+        {
+          "word": "later",
+          "phonetic": "/ˈleɪtər/",
+          "pos": "adv.",
+          "chinese": "稍後",
+          "sentence": "Three years later, another earthquake occurred."
+        },
+        {
+          "word": "surprise",
+          "phonetic": "/sərˈpraɪz/",
+          "pos": "n.",
+          "chinese": "驚喜",
+          "sentence": "Philip's behavior surprises everybody."
+        },
+        {
+          "word": "serious",
+          "phonetic": "/ˈsɪriəs/",
+          "pos": "adj.",
+          "chinese": "嚴重的",
+          "sentence": "The plane crash causes serious damages."
+        },
+        {
+          "word": "dangerous",
+          "phonetic": "/ˈdeɪndʒərəs/",
+          "pos": "adj.",
+          "chinese": "危險的",
+          "sentence": "This lake is dangerous for swimmers."
+        },
+        {
+          "word": "delicious",
+          "phonetic": "/dɪˈlɪʃəs/",
+          "pos": "adj.",
+          "chinese": "美味的",
+          "sentence": "The soup is delicious."
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "content": [
+        {
+          "word": "beside",
+          "phonetic": "/bɪˈsaɪd/",
+          "pos": "prep.",
+          "chinese": "在...旁邊",
+          "sentence": "Lily sits beside her twin sister."
+        },
+        {
+          "word": "enter",
+          "phonetic": "/ˈɛntər/",
+          "pos": "v.",
+          "chinese": "進入",
+          "sentence": "The train enters the tunnel."
+        },
+        {
+          "word": "fifty",
+          "phonetic": "/ˈfɪfti/",
+          "pos": "num.",
+          "chinese": "五十",
+          "sentence": "A half of one hundred is fifty."
+        },
+        {
+          "word": "rose",
+          "phonetic": "/roʊz/",
+          "pos": "n.",
+          "chinese": "玫瑰",
+          "sentence": "Gary is pruning his roses."
+        },
+        {
+          "word": "season",
+          "phonetic": "/ˈsizən/",
+          "pos": "n.",
+          "chinese": "季節",
+          "sentence": "This is the season for mangoes."
+        },
+        {
+          "word": "dance",
+          "phonetic": "/dæns/",
+          "pos": "v.",
+          "chinese": "跳舞",
+          "sentence": "Do you like dancing?"
+        },
+        {
+          "word": "skate",
+          "phonetic": "/skeɪt/",
+          "pos": "v.",
+          "chinese": "溜冰",
+          "sentence": "We went skating last night."
+        },
+        {
+          "word": "ice",
+          "phonetic": "/aɪs/",
+          "pos": "n.",
+          "chinese": "冰",
+          "sentence": "She put some ice in her drink."
+        },
+        {
+          "word": "treasure",
+          "phonetic": "/ˈtrɛʒər/",
+          "pos": "n.",
+          "chinese": "寶藏",
+          "sentence": "He found a treasure hidden in the cave."
+        },
+        {
+          "word": "pleasure",
+          "phonetic": "/ˈplɛʒər/",
+          "pos": "n.",
+          "chinese": "樂趣",
+          "sentence": "He found great pleasure in fishing."
+        },
+        {
+          "word": "pressure",
+          "phonetic": "/ˈprɛʃər/",
+          "pos": "n.",
+          "chinese": "壓力",
+          "sentence": "The intense game gave him pressure."
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "content": [
+        {
+          "word": "sixteen",
+          "phonetic": "/ˌsɪksˈtin/",
+          "pos": "num.",
+          "chinese": "十六",
+          "sentence": "My mother became an actress when she was sixteen years old."
+        },
+        {
+          "word": "chicken",
+          "phonetic": "/ˈtʃɪkən/",
+          "pos": "n.",
+          "chinese": "雞",
+          "sentence": "There is a roast chicken on the table."
+        },
+        {
+          "word": "elephant",
+          "phonetic": "/ˈɛləfənt/",
+          "pos": "n.",
+          "chinese": "大象",
+          "sentence": "I once rode an elephant in Viet Nam."
+        },
+        {
+          "word": "island",
+          "phonetic": "/ˈaɪlənd/",
+          "pos": "n.",
+          "chinese": "島嶼",
+          "sentence": "Taiwan is an island."
+        },
+        {
+          "word": "goat",
+          "phonetic": "/goʊt/",
+          "pos": "n.",
+          "chinese": "山羊",
+          "sentence": "You climb mountains like a goat."
+        },
+        {
+          "word": "ox",
+          "phonetic": "/ɑks/",
+          "pos": "n.",
+          "chinese": "公牛",
+          "sentence": "An ox has horns."
+        },
+        {
+          "word": "machine",
+          "phonetic": "/məˈʃin/",
+          "pos": "n.",
+          "chinese": "機器",
+          "sentence": "This machine is out of order."
+        },
+        {
+          "word": "ticket",
+          "phonetic": "/ˈtɪkɪt/",
+          "pos": "n.",
+          "chinese": "票",
+          "sentence": "Jack wins a free movie ticket."
+        },
+        {
+          "word": "die",
+          "phonetic": "/daɪ/",
+          "pos": "v.",
+          "chinese": "死亡",
+          "sentence": "Flowers will die without water."
+        },
+        {
+          "word": "public",
+          "phonetic": "/ˈpʌblɪk/",
+          "pos": "adj.",
+          "chinese": "公開的",
+          "sentence": "It is wrong to scribble in public places."
+        },
+        {
+          "word": "banquet",
+          "phonetic": "/ˈbæŋkwɪt/",
+          "pos": "n.",
+          "chinese": "宴會",
+          "sentence": "The banquet hall was well-decorated."
+        },
+        {
+          "word": "blanket",
+          "phonetic": "/ˈblæŋkɪt/",
+          "pos": "n.",
+          "chinese": "毯子",
+          "sentence": "The baby is covered with a blanket."
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "content": [
+        {
+          "word": "sixty",
+          "phonetic": "/ˈsɪksti/",
+          "pos": "num.",
+          "chinese": "六十",
+          "sentence": "There are sixty students in our English class."
+        },
+        {
+          "word": "sweet",
+          "phonetic": "/swit/",
+          "pos": "adj.",
+          "chinese": "甜的",
+          "sentence": "This apple isn't sweet enough."
+        },
+        {
+          "word": "lake",
+          "phonetic": "/leɪk/",
+          "pos": "n.",
+          "chinese": "湖",
+          "sentence": "The lake nearby has dried up."
+        },
+        {
+          "word": "monkey",
+          "phonetic": "/ˈmʌŋki/",
+          "pos": "n.",
+          "chinese": "猴子",
+          "sentence": "The monkey is Denny's favorite animal."
+        },
+        {
+          "word": "koala",
+          "phonetic": "/koʊˈɑlə/",
+          "pos": "n.",
+          "chinese": "無尾熊",
+          "sentence": "The koala moves slowly."
+        },
+        {
+          "word": "zebra",
+          "phonetic": "/ˈzibrə/",
+          "pos": "n.",
+          "chinese": "斑馬",
+          "sentence": "Zebra have black and white stripes."
+        },
+        {
+          "word": "kangaroo",
+          "phonetic": "/ˌkæŋgəˈru/",
+          "pos": "n.",
+          "chinese": "袋鼠",
+          "sentence": "Kangaroos have strong hind legs."
+        },
+        {
+          "word": "foreign",
+          "phonetic": "/ˈfɔrən/",
+          "pos": "adj.",
+          "chinese": "外國的",
+          "sentence": "Jason is a foreign student."
+        },
+        {
+          "word": "yummy",
+          "phonetic": "/ˈjʌmi/",
+          "pos": "adj.",
+          "chinese": "好吃的",
+          "sentence": "Yummy! One more yogurt, please."
+        },
+        {
+          "word": "uniform",
+          "phonetic": "/ˈjunəˌfɔrm/",
+          "pos": "n.",
+          "chinese": "制服",
+          "sentence": "The students are required to appear in class in uniform."
+        },
+        {
+          "word": "rabbit",
+          "phonetic": "/ˈræbɪt/",
+          "pos": "n.",
+          "chinese": "兔子",
+          "sentence": "Rabbits have red eyes and long ears."
+        },
+        {
+          "word": "credit",
+          "phonetic": "/ˈkrɛdɪt/",
+          "pos": "n.",
+          "chinese": "信用",
+          "sentence": "Her teacher gave her credit for doing a good job."
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "content": [
+        {
+          "word": "seventeen",
+          "phonetic": "/ˌsɛvənˈtin/",
+          "pos": "num.",
+          "chinese": "十七",
+          "sentence": "Seventeen comes after sixteen."
+        },
+        {
+          "word": "bench",
+          "phonetic": "/bɛntʃ/",
+          "pos": "n.",
+          "chinese": "長凳",
+          "sentence": "The benches in the park are stainless steel."
+        },
+        {
+          "word": "meat",
+          "phonetic": "/mit/",
+          "pos": "n.",
+          "chinese": "肉",
+          "sentence": "We often cook meat."
+        },
+        {
+          "word": "exercise",
+          "phonetic": "/ˈɛksərˌsaɪz/",
+          "pos": "v.",
+          "chinese": "運動",
+          "sentence": "You don't exercise enough."
+        },
+        {
+          "word": "lantern",
+          "phonetic": "/ˈlæntərn/",
+          "pos": "n.",
+          "chinese": "燈籠",
+          "sentence": "The girl carries a beautiful paper lantern."
+        },
+        {
+          "word": "leader",
+          "phonetic": "/ˈlidər/",
+          "pos": "n.",
+          "chinese": "領導者",
+          "sentence": "Our teacher is the leader-she will show us where to go."
+        },
+        {
+          "word": "language",
+          "phonetic": "/ˈlæŋgwɪdʒ/",
+          "pos": "n.",
+          "chinese": "語言",
+          "sentence": "Teacher Li can speak many foreign language including Russian."
+        },
+        {
+          "word": "luggage",
+          "phonetic": "/ˈlʌgɪdʒ/",
+          "pos": "n.",
+          "chinese": "行李",
+          "sentence": "Please make sure not to lose your luggage."
+        },
+        {
+          "word": "storage",
+          "phonetic": "/ˈstɔrɪdʒ/",
+          "pos": "n.",
+          "chinese": "儲存",
+          "sentence": "Do you have enough storage for your laptop?"
+        },
+        {
+          "word": "garbage",
+          "phonetic": "/ˈgɑrbɪdʒ/",
+          "pos": "n.",
+          "chinese": "垃圾",
+          "sentence": "Throw the garbage there, please."
+        },
+        {
+          "word": "damage",
+          "phonetic": "/ˈdæmɪdʒ/",
+          "pos": "n.",
+          "chinese": "損壞",
+          "sentence": "There is a little damage in your luggage."
+        },
+        {
+          "word": "cabbage",
+          "phonetic": "/ˈkæbɪdʒ/",
+          "pos": "n.",
+          "chinese": "高麗菜",
+          "sentence": "Do you like eating cabbage?"
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "content": [
+        {
+          "word": "seventy",
+          "phonetic": "/ˈsɛvənti/",
+          "pos": "num.",
+          "chinese": "七十",
+          "sentence": "The speaker is in his seventy."
+        },
+        {
+          "word": "railway",
+          "phonetic": "/ˈreɪlˌweɪ/",
+          "pos": "n.",
+          "chinese": "鐵路",
+          "sentence": "The new railway was opened to traffic last month."
+        },
+        {
+          "word": "eve",
+          "phonetic": "/iv/",
+          "pos": "n.",
+          "chinese": "前夕",
+          "sentence": "I cannot sleep on the eve of the race."
+        },
+        {
+          "word": "autumn",
+          "phonetic": "/ˈɔtəm/",
+          "pos": "n.",
+          "chinese": "秋天",
+          "sentence": "Most fruits ripen in autumn."
+        },
+        {
+          "word": "cheap",
+          "phonetic": "/tʃip/",
+          "pos": "adj.",
+          "chinese": "便宜的",
+          "sentence": "Watermelons are very cheap now."
+        },
+        {
+          "word": "flute",
+          "phonetic": "/flut/",
+          "pos": "n.",
+          "chinese": "長笛",
+          "sentence": "I hate playing the flute."
+        },
+        {
+          "word": "bridge",
+          "phonetic": "/brɪdʒ/",
+          "pos": "n.",
+          "chinese": "橋",
+          "sentence": "The bridge is made of stone."
+        },
+        {
+          "word": "bowl",
+          "phonetic": "/boʊl/",
+          "pos": "n.",
+          "chinese": "碗",
+          "sentence": "Adam broke his bowl."
+        },
+        {
+          "word": "package",
+          "phonetic": "/ˈpækɪdʒ/",
+          "pos": "n.",
+          "chinese": "包裹",
+          "sentence": "A large package is left outside the door."
+        },
+        {
+          "word": "wedge",
+          "phonetic": "/wɛdʒ/",
+          "pos": "n.",
+          "chinese": "楔子",
+          "sentence": "I used a wedge to keep the door open."
+        },
+        {
+          "word": "knowledge",
+          "phonetic": "/ˈnɑlɪdʒ/",
+          "pos": "n.",
+          "chinese": "知識",
+          "sentence": "We go to school to learn knowledge of different things."
+        },
+        {
+          "word": "porridge",
+          "phonetic": "/ˈpɔrɪdʒ/",
+          "pos": "n.",
+          "chinese": "粥",
+          "sentence": "My dad likes to eat porridge."
+        }
+      ]
+    },
+    {
+      "week": 19,
+      "content": [
+        {
+          "word": "doctor",
+          "phonetic": "/ˈdɑktər/",
+          "pos": "n.",
+          "chinese": "醫生",
+          "sentence": "This doctor is very patient."
+        },
+        {
+          "word": "cheat",
+          "phonetic": "/tʃit/",
+          "pos": "v.",
+          "chinese": "作弊",
+          "sentence": "Never cheat in exams."
+        },
+        {
+          "word": "kite",
+          "phonetic": "/kaɪt/",
+          "pos": "n.",
+          "chinese": "風箏",
+          "sentence": "Woody is learning to fly a kite."
+        },
+        {
+          "word": "queen",
+          "phonetic": "/kwin/",
+          "pos": "n.",
+          "chinese": "女王",
+          "sentence": "Princess Snow-White's step mother is an evil queen."
+        },
+        {
+          "word": "prince",
+          "phonetic": "/prɪns/",
+          "pos": "n.",
+          "chinese": "王子",
+          "sentence": "A prince lives in a palace."
+        },
+        {
+          "word": "kilogram",
+          "phonetic": "/ˈkɪləˌgræm/",
+          "pos": "n.",
+          "chinese": "公斤",
+          "sentence": "Maggie borrowed a kilogram of rice from her neighbor."
+        },
+        {
+          "word": "zero",
+          "phonetic": "/ˈzɪroʊ/",
+          "pos": "num.",
+          "chinese": "零",
+          "sentence": "There are four zeros in my phone number."
+        },
+        {
+          "word": "ghost",
+          "phonetic": "/goʊst/",
+          "pos": "n.",
+          "chinese": "鬼",
+          "sentence": "He is reading a ghost story."
+        },
+        {
+          "word": "robot",
+          "phonetic": "/ˈroʊˌbɑt/",
+          "pos": "n.",
+          "chinese": "機器人",
+          "sentence": "The robot can speak."
+        },
+        {
+          "word": "program",
+          "phonetic": "/ˈproʊˌgræm/",
+          "pos": "n.",
+          "chinese": "節目",
+          "sentence": "Tommy is going to sing in the next program."
+        },
+        {
+          "word": "motorcycle",
+          "phonetic": "/ˈmoʊtərˌsaɪkəl/",
+          "pos": "n.",
+          "chinese": "摩托車",
+          "sentence": "My brother has a splendid motorcycle."
+        },
+        {
+          "word": "window",
+          "phonetic": "/ˈwɪndoʊ/",
+          "pos": "n.",
+          "chinese": "窗戶",
+          "sentence": "The shop assistants dress up the window for Christmas."
+        }
+      ]
+    },
+    {
+      "week": 20,
+      "content": [
+        {
+          "word": "snowy",
+          "phonetic": "/ˈsnoʊi/",
+          "pos": "adj.",
+          "chinese": "下雪的",
+          "sentence": "I've never been in a snowy place."
+        },
+        {
+          "word": "chocolate",
+          "phonetic": "/ˈtʃɔklət/",
+          "pos": "n.",
+          "chinese": "巧克力",
+          "sentence": "Eva received a chocolate bar on Valentine's Day."
+        },
+        {
+          "word": "spaghetti",
+          "phonetic": "/spəˈgɛti/",
+          "pos": "n.",
+          "chinese": "義大利麵",
+          "sentence": "He finished the spaghetti on his plate."
+        },
+        {
+          "word": "heavy",
+          "phonetic": "/ˈhɛvi/",
+          "pos": "adj.",
+          "chinese": "重的",
+          "sentence": "This heavy baby cries loudly."
+        },
+        {
+          "word": "yesterday",
+          "phonetic": "/ˈjɛstərˌdeɪ/",
+          "pos": "adv.",
+          "chinese": "昨天",
+          "sentence": "I got the report card the day before yesterday."
+        },
+        {
+          "word": "tomato",
+          "phonetic": "/təˈmeɪtoʊ/",
+          "pos": "n.",
+          "chinese": "番茄",
+          "sentence": "Ketchup is made of tomatoes."
+        },
+        {
+          "word": "smoke",
+          "phonetic": "/smoʊk/",
+          "pos": "n.",
+          "chinese": "煙",
+          "sentence": "Smoking is bad to your health."
+        },
+        {
+          "word": "radio",
+          "phonetic": "/ˈreɪdiˌoʊ/",
+          "pos": "n.",
+          "chinese": "收音機",
+          "sentence": "I heard the news of your success on the radio."
+        },
+        {
+          "word": "piano",
+          "phonetic": "/piˈænoʊ/",
+          "pos": "n.",
+          "chinese": "鋼琴",
+          "sentence": "She studies the piano under her aunt."
+        },
+        {
+          "word": "hippo",
+          "phonetic": "/ˈhɪpoʊ/",
+          "pos": "n.",
+          "chinese": "河馬",
+          "sentence": "A hippo spends lots of time in water."
+        }
+      ]
+    },
+    {
+      "week": 21,
+      "content": [
+        {
+          "word": "power",
+          "phonetic": "/ˈpaʊər/",
+          "pos": "n.",
+          "chinese": "力量",
+          "sentence": "A typhoon has the power to root up a tree."
+        },
+        {
+          "word": "practice",
+          "phonetic": "/ˈpræktɪs/",
+          "pos": "v.",
+          "chinese": "練習",
+          "sentence": "You won't become a good singer if you don't practice."
+        },
+        {
+          "word": "convenient",
+          "phonetic": "/kənˈvinjənt/",
+          "pos": "adj.",
+          "chinese": "方便的",
+          "sentence": "It is convenient to have a post office near my house."
+        },
+        {
+          "word": "umbrella",
+          "phonetic": "/əmˈbrɛlə/",
+          "pos": "n.",
+          "chinese": "雨傘",
+          "sentence": "Take an umbrella-it's going to rain."
+        },
+        {
+          "word": "piece",
+          "phonetic": "/pis/",
+          "pos": "n.",
+          "chinese": "一片",
+          "sentence": "Gary ate three pieces of cake at lunch."
+        },
+        {
+          "word": "hamburger",
+          "phonetic": "/ˈhæmˌbɜrgər/",
+          "pos": "n.",
+          "chinese": "漢堡",
+          "sentence": "Many people order hamburgers to go."
+        },
+        {
+          "word": "pocket",
+          "phonetic": "/ˈpɑkɪt/",
+          "pos": "n.",
+          "chinese": "口袋",
+          "sentence": "Don't put your hands in the pockets."
+        },
+        {
+          "word": "dollar",
+          "phonetic": "/ˈdɑlər/",
+          "pos": "n.",
+          "chinese": "元",
+          "sentence": "The towel costs two hundred dollars."
+        },
+        {
+          "word": "dot",
+          "phonetic": "/dɑt/",
+          "pos": "n.",
+          "chinese": "點",
+          "sentence": "She wears a dotted skirt."
+        },
+        {
+          "word": "popular",
+          "phonetic": "/ˈpɑpjələr/",
+          "pos": "adj.",
+          "chinese": "受歡迎的",
+          "sentence": "The song is becoming popular."
+        },
+        {
+          "word": "frog",
+          "phonetic": "/frɑg/",
+          "pos": "n.",
+          "chinese": "青蛙",
+          "sentence": "The croaking of frogs is noisy."
+        },
+        {
+          "word": "cop",
+          "phonetic": "/kɑp/",
+          "pos": "n.",
+          "chinese": "警察",
+          "sentence": "There are cops outside the apartment."
+        }
+      ]
+    },
+    {
+      "week": 22,
+      "content": [
+        {
+          "word": "hotel",
+          "phonetic": "/hoʊˈtɛl/",
+          "pos": "n.",
+          "chinese": "旅館",
+          "sentence": "The visitors stay at a luxurious hotel."
+        },
+        {
+          "word": "recorder",
+          "phonetic": "/rɪˈkɔrdər/",
+          "pos": "n.",
+          "chinese": "錄音機",
+          "sentence": "The recorder is on."
+        },
+        {
+          "word": "apartment",
+          "phonetic": "/əˈpɑrtmənt/",
+          "pos": "n.",
+          "chinese": "公寓",
+          "sentence": "Jack lives in a three-room apartment with his parents."
+        },
+        {
+          "word": "library",
+          "phonetic": "/ˈlaɪˌbrɛri/",
+          "pos": "n.",
+          "chinese": "圖書館",
+          "sentence": "Do you often borrow books from the library?"
+        },
+        {
+          "word": "possible",
+          "phonetic": "/ˈpɑsəbəl/",
+          "pos": "adj.",
+          "chinese": "可能的",
+          "sentence": "Is it possible that a snake has two heads?"
+        },
+        {
+          "word": "band",
+          "phonetic": "/bænd/",
+          "pos": "n.",
+          "chinese": "樂團",
+          "sentence": "He is a member of this jazz band."
+        },
+        {
+          "word": "dodgeball",
+          "phonetic": "/ˈdɑdʒˌbɔl/",
+          "pos": "n.",
+          "chinese": "躲避球",
+          "sentence": "He dare not play dodge ball."
+        },
+        {
+          "word": "nod",
+          "phonetic": "/nɑd/",
+          "pos": "v.",
+          "chinese": "點頭",
+          "sentence": "Susan nodded to say yes."
+        },
+        {
+          "word": "hotdog",
+          "phonetic": "/ˈhɑtˌdɔg/",
+          "pos": "n.",
+          "chinese": "熱狗",
+          "sentence": "Do you like hot dogs?"
+        },
+        {
+          "word": "holiday",
+          "phonetic": "/ˈhɑləˌdeɪ/",
+          "pos": "n.",
+          "chinese": "假日",
+          "sentence": "Gordon spent his holiday at the seaside."
+        }
+      ]
+    },
+    {
+      "week": 23,
+      "content": [
+        {
+          "word": "rat",
+          "phonetic": "/ræt/",
+          "pos": "n.",
+          "chinese": "老鼠",
+          "sentence": "Rats carry germs."
+        },
+        {
+          "word": "lid",
+          "phonetic": "/lɪd/",
+          "pos": "n.",
+          "chinese": "蓋子",
+          "sentence": "The lid of the kettle is open."
+        },
+        {
+          "word": "become",
+          "phonetic": "/bɪˈkʌm/",
+          "pos": "v.",
+          "chinese": "變成",
+          "sentence": "He was 18 when he became a soldier."
+        },
+        {
+          "word": "jog",
+          "phonetic": "/dʒɑg/",
+          "pos": "v.",
+          "chinese": "慢跑",
+          "sentence": "Many people go jogging in the park in the early morning."
+        },
+        {
+          "word": "meeting",
+          "phonetic": "/ˈmitɪŋ/",
+          "pos": "n.",
+          "chinese": "會議",
+          "sentence": "Many people came to the meeting in the hall."
+        },
+        {
+          "word": "American",
+          "phonetic": "/əˈmɛrɪkən/",
+          "pos": "n.",
+          "chinese": "美國人",
+          "sentence": "Catherine is an American."
+        },
+        {
+          "word": "soup",
+          "phonetic": "/sup/",
+          "pos": "n.",
+          "chinese": "湯",
+          "sentence": "Mum cooked a pot of chicken soup."
+        },
+        {
+          "word": "unite",
+          "phonetic": "/juˈnaɪt/",
+          "pos": "v.",
+          "chinese": "團結",
+          "sentence": "Everyone needs to unite for a better world."
+        },
+        {
+          "word": "computer",
+          "phonetic": "/kəmˈpjutər/",
+          "pos": "n.",
+          "chinese": "電腦",
+          "sentence": "She writes her homework with the computer."
+        },
+        {
+          "word": "student",
+          "phonetic": "/ˈstudənt/",
+          "pos": "n.",
+          "chinese": "學生",
+          "sentence": "Amy is a student of history."
+        },
+        {
+          "word": "stupid",
+          "phonetic": "/ˈstupɪd/",
+          "pos": "adj.",
+          "chinese": "笨的",
+          "sentence": "A pig is not stupid at all."
+        }
+      ]
+    },
+    {
+      "week": 24,
+      "content": [
+        {
+          "word": "eighty",
+          "phonetic": "/ˈeɪti/",
+          "pos": "num.",
+          "chinese": "八十",
+          "sentence": "You owe me eighty dollars."
+        },
+        {
+          "word": "shape",
+          "phonetic": "/ʃeɪp/",
+          "pos": "n.",
+          "chinese": "形狀",
+          "sentence": "The cake is in the shape of a heart."
+        },
+        {
+          "word": "restroom",
+          "phonetic": "/ˈrɛstˌrum/",
+          "pos": "n.",
+          "chinese": "廁所",
+          "sentence": "This restroom is for the female."
+        },
+        {
+          "word": "experience",
+          "phonetic": "/ɪkˈspɪriəns/",
+          "pos": "n.",
+          "chinese": "經驗",
+          "sentence": "Do you have the experience of playing the piano?"
+        },
+        {
+          "word": "mile",
+          "phonetic": "/maɪl/",
+          "pos": "n.",
+          "chinese": "英里",
+          "sentence": "The orchard is three miles away from here."
+        },
+        {
+          "word": "train",
+          "phonetic": "/treɪn/",
+          "pos": "n.",
+          "chinese": "火車",
+          "sentence": "The train was derailed."
+        },
+        {
+          "word": "USA",
+          "phonetic": "/ˌjuˌɛsˈeɪ/",
+          "pos": "n.",
+          "chinese": "美國",
+          "sentence": "USA is a developed country."
+        },
+        {
+          "word": "shine",
+          "phonetic": "/ʃaɪn/",
+          "pos": "v.",
+          "chinese": "閃耀",
+          "sentence": "The diamond shines brightly."
+        },
+        {
+          "word": "calf",
+          "phonetic": "/kæf/",
+          "pos": "n.",
+          "chinese": "小牛",
+          "sentence": "A baby cow is called a calf."
+        },
+        {
+          "word": "scarf",
+          "phonetic": "/skɑrf/",
+          "pos": "n.",
+          "chinese": "圍巾",
+          "sentence": "She is wearing a nice scarf."
+        },
+        {
+          "word": "yard",
+          "phonetic": "/jɑrd/",
+          "pos": "n.",
+          "chinese": "庭院",
+          "sentence": "I build a doghouse in the yard."
+        },
+        {
+          "word": "marble",
+          "phonetic": "/ˈmɑrbəl/",
+          "pos": "n.",
+          "chinese": "彈珠",
+          "sentence": "He likes to collect marbles."
+        }
+      ]
+    },
+    {
+      "week": 25,
+      "content": [
+        {
+          "word": "woman",
+          "phonetic": "/ˈwʊmən/",
+          "pos": "n.",
+          "chinese": "女人",
+          "sentence": "Women live longer than men in most countries."
+        },
+        {
+          "word": "engineer",
+          "phonetic": "/ˌɛndʒəˈnɪr/",
+          "pos": "n.",
+          "chinese": "工程師",
+          "sentence": "Uncle Henry is an engineer."
+        },
+        {
+          "word": "eighteen",
+          "phonetic": "/eɪˈtin/",
+          "pos": "num.",
+          "chinese": "十八",
+          "sentence": "Are there eighteen books in the room?"
+        },
+        {
+          "word": "heat",
+          "phonetic": "/hit/",
+          "pos": "n.",
+          "chinese": "熱度",
+          "sentence": "This fire doesn't give out much heat."
+        },
+        {
+          "word": "sidewalk",
+          "phonetic": "/ˈsaɪdˌwɔk/",
+          "pos": "n.",
+          "chinese": "人行道",
+          "sentence": "The sidewalk is blocked by motorcycles."
+        },
+        {
+          "word": "hate",
+          "phonetic": "/heɪt/",
+          "pos": "v.",
+          "chinese": "討厭",
+          "sentence": "My cat hates dogs."
+        },
+        {
+          "word": "cute",
+          "phonetic": "/kjut/",
+          "pos": "adj.",
+          "chinese": "可愛的",
+          "sentence": "What a cute kitten!"
+        },
+        {
+          "word": "baby",
+          "phonetic": "/ˈbeɪbi/",
+          "pos": "n.",
+          "chinese": "嬰兒",
+          "sentence": "The couple got a baby."
+        },
+        {
+          "word": "glass",
+          "phonetic": "/glæs/",
+          "pos": "n.",
+          "chinese": "玻璃",
+          "sentence": "I am so thirsty. I have drunk two glasses of water."
+        },
+        {
+          "word": "quarter",
+          "phonetic": "/ˈkwɔrtər/",
+          "pos": "n.",
+          "chinese": "四分之一",
+          "sentence": "He cuts the apple into quarters."
+        },
+        {
+          "word": "hungry",
+          "phonetic": "/ˈhʌŋgri/",
+          "pos": "adj.",
+          "chinese": "餓的",
+          "sentence": "You must be hungry after working for the whole morning."
+        },
+        {
+          "word": "tree",
+          "phonetic": "/tri/",
+          "pos": "n.",
+          "chinese": "樹",
+          "sentence": "We rest under the tree."
+        }
+      ]
+    },
+    {
+      "week": 26,
+      "content": [
+        {
+          "word": "ninety",
+          "phonetic": "/ˈnaɪnti/",
+          "pos": "num.",
+          "chinese": "九十",
+          "sentence": "My grandma is ninety years old."
+        },
+        {
+          "word": "fact",
+          "phonetic": "/fækt/",
+          "pos": "n.",
+          "chinese": "事實",
+          "sentence": "In fact, he lied."
+        },
+        {
+          "word": "comb",
+          "phonetic": "/koʊm/",
+          "pos": "v.",
+          "chinese": "梳子",
+          "sentence": "My mother combs my hair every morning."
+        },
+        {
+          "word": "pants",
+          "phonetic": "/pænts/",
+          "pos": "n.",
+          "chinese": "褲子",
+          "sentence": "The pants at this shop are on sale."
+        },
+        {
+          "word": "wallet",
+          "phonetic": "/ˈwɑlɪt/",
+          "pos": "n.",
+          "chinese": "錢包",
+          "sentence": "The wallet cost me only fifty dollars."
+        },
+        {
+          "word": "prize",
+          "phonetic": "/praɪz/",
+          "pos": "n.",
+          "chinese": "獎品",
+          "sentence": "She wins the first prize."
+        },
+        {
+          "word": "grape",
+          "phonetic": "/greɪp/",
+          "pos": "n.",
+          "chinese": "葡萄",
+          "sentence": "The grapes are sweet."
+        },
+        {
+          "word": "grass",
+          "phonetic": "/græs/",
+          "pos": "n.",
+          "chinese": "草",
+          "sentence": "Rabbits eat grass."
+        },
+        {
+          "word": "hundred",
+          "phonetic": "/ˈhʌndrəd/",
+          "pos": "num.",
+          "chinese": "百",
+          "sentence": "Hundreds of people attended the famous director's concert."
+        },
+        {
+          "word": "Christmas",
+          "phonetic": "/ˈkrɪsməs/",
+          "pos": "n.",
+          "chinese": "聖誕節",
+          "sentence": "Merry Christmas to you!"
+        }
+      ]
+    },
+    {
+      "week": 27,
+      "content": [
+        {
+          "word": "nineteen",
+          "phonetic": "/ˌnaɪnˈtin/",
+          "pos": "num.",
+          "chinese": "十九",
+          "sentence": "I have been to Australia by myself when I was nineteen."
+        },
+        {
+          "word": "test",
+          "phonetic": "/tɛst/",
+          "pos": "n.",
+          "chinese": "測驗",
+          "sentence": "Mr. Taylor passed the driving test at the second attempt."
+        },
+        {
+          "word": "tall",
+          "phonetic": "/tɔl/",
+          "pos": "adj.",
+          "chinese": "高的",
+          "sentence": "James is taller than Paul, but Richard is the tallest."
+        },
+        {
+          "word": "taxi",
+          "phonetic": "/ˈtæksi/",
+          "pos": "n.",
+          "chinese": "計程車",
+          "sentence": "Mr. and Mrs. Bush take a taxi to the hotel."
+        },
+        {
+          "word": "rollerskate",
+          "phonetic": "/ˈroʊlərˌskeɪt/",
+          "pos": "n.",
+          "chinese": "溜冰鞋",
+          "sentence": "My roller skates have become too small."
+        },
+        {
+          "word": "China",
+          "phonetic": "/ˈtʃaɪnə/",
+          "pos": "n.",
+          "chinese": "中國",
+          "sentence": "China has many antiques."
+        },
+        {
+          "word": "honey",
+          "phonetic": "/ˈhʌni/",
+          "pos": "n.",
+          "chinese": "蜂蜜",
+          "sentence": "Bears like honey."
+        },
+        {
+          "word": "hour",
+          "phonetic": "/aʊər/",
+          "pos": "n.",
+          "chinese": "小時",
+          "sentence": "An hour in the morning is worth two in the evening."
+        },
+        {
+          "word": "menu",
+          "phonetic": "/ˈmɛnju/",
+          "pos": "n.",
+          "chinese": "菜單",
+          "sentence": "Let's see what is on the menu today."
+        },
+        {
+          "word": "squirt",
+          "phonetic": "/skwɜrt/",
+          "pos": "v.",
+          "chinese": "噴射",
+          "sentence": "He gave a quick squirt of ketchup on his fries."
+        },
+        {
+          "word": "shopkeeper",
+          "phonetic": "/ˈʃɑpˌkipər/",
+          "pos": "n.",
+          "chinese": "店主",
+          "sentence": "The shopkeeper has run the drugstore for forty years."
+        },
+        {
+          "word": "bark",
+          "phonetic": "/bɑrk/",
+          "pos": "v.",
+          "chinese": "吠",
+          "sentence": "The dog gave a loud bark."
+        }
+      ]
+    },
+    {
+      "week": 28,
+      "content": [
+        {
+          "word": "president",
+          "phonetic": "/ˈprɛzɪdənt/",
+          "pos": "n.",
+          "chinese": "總統",
+          "sentence": "Mr. President is giving a speech."
+        },
+        {
+          "word": "frisbee",
+          "phonetic": "/ˈfrɪzbi/",
+          "pos": "n.",
+          "chinese": "飛盤",
+          "sentence": "Teach me how to throw a frisbee."
+        },
+        {
+          "word": "tub",
+          "phonetic": "/tʌb/",
+          "pos": "n.",
+          "chinese": "浴缸",
+          "sentence": "The tub is filled with bubbles."
+        },
+        {
+          "word": "aunt",
+          "phonetic": "/ænt/",
+          "pos": "n.",
+          "chinese": "阿姨",
+          "sentence": "Aunt Mary is my mother's sister."
+        },
+        {
+          "word": "nothing",
+          "phonetic": "/ˈnʌθɪŋ/",
+          "pos": "pron.",
+          "chinese": "沒有什麼",
+          "sentence": "There is nothing new in this book."
+        },
+        {
+          "word": "tennis",
+          "phonetic": "/ˈtɛnɪs/",
+          "pos": "n.",
+          "chinese": "網球",
+          "sentence": "Tennis is very popular among young people."
+        },
+        {
+          "word": "telephone",
+          "phonetic": "/ˈtɛləˌfoʊn/",
+          "pos": "n.",
+          "chinese": "電話",
+          "sentence": "The telephone directory gives people's names, addresses, and telephone numbers."
+        },
+        {
+          "word": "sword",
+          "phonetic": "/sɔrd/",
+          "pos": "n.",
+          "chinese": "劍",
+          "sentence": "He is holding a long sword."
+        },
+        {
+          "word": "million",
+          "phonetic": "/ˈmɪljən/",
+          "pos": "num.",
+          "chinese": "百萬",
+          "sentence": "Her jewelry costs about million dollars."
+        },
+        {
+          "word": "archer",
+          "phonetic": "/ˈɑrtʃər/",
+          "pos": "n.",
+          "chinese": "弓箭手",
+          "sentence": "The archer is aiming at the target."
+        },
+        {
+          "word": "department store",
+          "phonetic": "/dɪˈpɑrtməntˌstɔr/",
+          "pos": "n.",
+          "chinese": "百貨公司",
+          "sentence": "Josephine is going to the department store."
+        }
+      ]
+    },
+    {
+      "week": 29,
+      "content": [
+        {
+          "word": "date",
+          "phonetic": "/deɪt/",
+          "pos": "n.",
+          "chinese": "日期",
+          "sentence": "What's the date of the Dragon Boat Festival?"
+        },
+        {
+          "word": "parent",
+          "phonetic": "/ˈpɛrənt/",
+          "pos": "n.",
+          "chinese": "父母",
+          "sentence": "Owen and Katy have become parents."
+        },
+        {
+          "word": "banana",
+          "phonetic": "/bəˈnænə/",
+          "pos": "n.",
+          "chinese": "香蕉",
+          "sentence": "Aunt Li came with a hand of bananas."
+        },
+        {
+          "word": "gram",
+          "phonetic": "/græm/",
+          "pos": "n.",
+          "chinese": "公克",
+          "sentence": "One thousand grams are equal to one kilogram."
+        },
+        {
+          "word": "grandfather",
+          "phonetic": "/ˈgrændˌfɑðər/",
+          "pos": "n.",
+          "chinese": "祖父",
+          "sentence": "My grandfather strolls in the park with his bird everyday."
+        },
+        {
+          "word": "grandmother",
+          "phonetic": "/ˈgrændˌmʌðər/",
+          "pos": "n.",
+          "chinese": "祖母",
+          "sentence": "My grandmother is a good cook."
+        },
+        {
+          "word": "traffic",
+          "phonetic": "/ˈtræfɪk/",
+          "pos": "n.",
+          "chinese": "交通",
+          "sentence": "The traffic cop writes me a ticket for speeding."
+        },
+        {
+          "word": "waitress",
+          "phonetic": "/ˈweɪtrəs/",
+          "pos": "n.",
+          "chinese": "女服務生",
+          "sentence": "Come here, waitress!"
+        },
+        {
+          "word": "screen",
+          "phonetic": "/skrin/",
+          "pos": "n.",
+          "chinese": "螢幕",
+          "sentence": "There is a hole on the screen."
+        },
+        {
+          "word": "secretary",
+          "phonetic": "/ˈsɛkrəˌtɛri/",
+          "pos": "n.",
+          "chinese": "秘書",
+          "sentence": "She is my father's secretary."
+        },
+        {
+          "word": "princess",
+          "phonetic": "/ˈprɪnsɛs/",
+          "pos": "n.",
+          "chinese": "公主",
+          "sentence": "Sleeping Beauty is a princess."
+        }
+      ]
+    },
+    {
+      "week": 30,
+      "content": [
+        {
+          "word": "mailman",
+          "phonetic": "/ˈmeɪlˌmæn/",
+          "pos": "n.",
+          "chinese": "郵差",
+          "sentence": "Joe's father is a mailman."
+        },
+        {
+          "word": "ROC",
+          "phonetic": "/ˌɑrˌoʊˈsi/",
+          "pos": "n.",
+          "chinese": "中華民國",
+          "sentence": "\"ROC\" is the abbreviation of \"Republic of China.\""
+        },
+        {
+          "word": "tea",
+          "phonetic": "/ti/",
+          "pos": "n.",
+          "chinese": "茶",
+          "sentence": "Christine served us with tea."
+        },
+        {
+          "word": "Chinese",
+          "phonetic": "/tʃaɪˈniz/",
+          "pos": "n.",
+          "chinese": "中文",
+          "sentence": "Though he's a French, he speaks Chinese well."
+        },
+        {
+          "word": "taste",
+          "phonetic": "/teɪst/",
+          "pos": "v.",
+          "chinese": "嚐起來",
+          "sentence": "This tea tastes sweet."
+        },
+        {
+          "word": "together",
+          "phonetic": "/təˈgɛðər/",
+          "pos": "adv.",
+          "chinese": "一起",
+          "sentence": "I stick the two pieces of paper together."
+        },
+        {
+          "word": "dear",
+          "phonetic": "/dɪr/",
+          "pos": "adj.",
+          "chinese": "親愛的",
+          "sentence": "He is dear to us."
+        },
+        {
+          "word": "postcard",
+          "phonetic": "/ˈpoʊstˌkɑrd/",
+          "pos": "n.",
+          "chinese": "明信片",
+          "sentence": "Look, how beautiful the postcard is!"
+        },
+        {
+          "word": "December",
+          "phonetic": "/dɪˈsɛmbər/",
+          "pos": "n.",
+          "chinese": "十二月",
+          "sentence": "December is the last month of a year."
+        },
+        {
+          "word": "tired",
+          "phonetic": "/taɪərd/",
+          "pos": "adj.",
+          "chinese": "疲倦的",
+          "sentence": "Andy is tired of Tim's monkey business."
+        },
+        {
+          "word": "spider",
+          "phonetic": "/ˈspaɪdər/",
+          "pos": "n.",
+          "chinese": "蜘蛛",
+          "sentence": "A spider crawls on your back."
+        }
+      ]
+    },
+    {
+      "week": 31,
+      "content": [
+        {
+          "word": "actress",
+          "phonetic": "/ˈæktrəs/",
+          "pos": "n.",
+          "chinese": "女演員",
+          "sentence": "The actress acted the witch very well."
+        },
+        {
+          "word": "theater",
+          "phonetic": "/ˈθiətər/",
+          "pos": "n.",
+          "chinese": "劇院",
+          "sentence": "This theater is a historic spot."
+        },
+        {
+          "word": "somewhere",
+          "phonetic": "/ˈsʌmˌwɛr/",
+          "pos": "adv.",
+          "chinese": "某處",
+          "sentence": "Mr. Green's daughter lives somewhere in Japan."
+        },
+        {
+          "word": "classmate",
+          "phonetic": "/ˈklæsˌmeɪt/",
+          "pos": "n.",
+          "chinese": "同學",
+          "sentence": "We were classmates at elementary school."
+        },
+        {
+          "word": "dragon",
+          "phonetic": "/ˈdrægən/",
+          "pos": "n.",
+          "chinese": "龍",
+          "sentence": "A huge dragon guarded the treasure."
+        },
+        {
+          "word": "glasses",
+          "phonetic": "/ˈglæsɪz/",
+          "pos": "n.",
+          "chinese": "眼鏡",
+          "sentence": "I cannot see without my glasses."
+        },
+        {
+          "word": "either",
+          "phonetic": "/ˈiðər/",
+          "pos": "conj.",
+          "chinese": "任一",
+          "sentence": "You may read either book."
+        },
+        {
+          "word": "neither",
+          "phonetic": "/ˈniðər/",
+          "pos": "conj.",
+          "chinese": "兩者都不",
+          "sentence": "Neither option seemed appealing to her."
+        },
+        {
+          "word": "goose",
+          "phonetic": "/gus/",
+          "pos": "n.",
+          "chinese": "鵝",
+          "sentence": "A goose has a long neck."
+        },
+        {
+          "word": "good-bye",
+          "phonetic": "/gʊdˈbaɪ/",
+          "pos": "interj.",
+          "chinese": "再見",
+          "sentence": "She waves her hand to say good-bye."
+        },
+        {
+          "word": "moody",
+          "phonetic": "/ˈmudi/",
+          "pos": "adj.",
+          "chinese": "喜怒無常的",
+          "sentence": "He can be moody at times."
+        },
+        {
+          "word": "raccoon",
+          "phonetic": "/ræˈkun/",
+          "pos": "n.",
+          "chinese": "浣熊",
+          "sentence": "I saw a raccoon last night."
+        }
+      ]
+    },
+    {
+      "week": 32,
+      "content": [
+        {
+          "word": "neighbor",
+          "phonetic": "/ˈneɪbər/",
+          "pos": "n.",
+          "chinese": "鄰居",
+          "sentence": "My neighbors are friendly."
+        },
+        {
+          "word": "repeat",
+          "phonetic": "/rɪˈpit/",
+          "pos": "v.",
+          "chinese": "重複",
+          "sentence": "Could you repeat the question, Daisy?"
+        },
+        {
+          "word": "CD",
+          "phonetic": "/ˌsiˈdi/",
+          "pos": "n.",
+          "chinese": "光碟",
+          "sentence": "This CD player is cool."
+        },
+        {
+          "word": "video",
+          "phonetic": "/ˈvɪdioʊ/",
+          "pos": "n.",
+          "chinese": "影片",
+          "sentence": "Turn off the video, please."
+        },
+        {
+          "word": "internet",
+          "phonetic": "/ˈɪntərˌnɛt/",
+          "pos": "n.",
+          "chinese": "網路",
+          "sentence": "I send a lot of Christmas cards on the internet."
+        },
+        {
+          "word": "forget",
+          "phonetic": "/fərˈgɛt/",
+          "pos": "v.",
+          "chinese": "忘記",
+          "sentence": "I forget his name."
+        },
+        {
+          "word": "movie",
+          "phonetic": "/ˈmuvi/",
+          "pos": "n.",
+          "chinese": "電影",
+          "sentence": "I have seen the place in the movie."
+        },
+        {
+          "word": "Sunday",
+          "phonetic": "/ˈsʌnˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期日",
+          "sentence": "The Johnsons go to church on Sundays."
+        },
+        {
+          "word": "Monday",
+          "phonetic": "/ˈmʌnˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期一",
+          "sentence": "Mum always goes shopping on Mondays."
+        },
+        {
+          "word": "Tuesday",
+          "phonetic": "/ˈtuzˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期二",
+          "sentence": "The guests left on Tuesday."
+        },
+        {
+          "word": "Wednesday",
+          "phonetic": "/ˈwɛnzˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期三",
+          "sentence": "Their wedding will take place on Wednesday."
+        },
+        {
+          "word": "Thursday",
+          "phonetic": "/ˈθɜrzˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期四",
+          "sentence": "This Thursday is Teacher's Day."
+        }
+      ]
+    },
+    {
+      "week": 33,
+      "content": [
+        {
+          "word": "dumpling",
+          "phonetic": "/ˈdʌmplɪŋ/",
+          "pos": "n.",
+          "chinese": "餃子",
+          "sentence": "I can eat twenty dumplings for a meal."
+        },
+        {
+          "word": "eighth",
+          "phonetic": "/eɪtθ/",
+          "pos": "num.",
+          "chinese": "第八",
+          "sentence": "He is eating the eighth bowl of rice."
+        },
+        {
+          "word": "officer",
+          "phonetic": "/ˈɔfəsər/",
+          "pos": "n.",
+          "chinese": "官員",
+          "sentence": "The officer ordered his men to advance."
+        },
+        {
+          "word": "everything",
+          "phonetic": "/ˈɛvriˌθɪŋ/",
+          "pos": "pron.",
+          "chinese": "每件事",
+          "sentence": "Everything is ready for the journey."
+        },
+        {
+          "word": "excellent",
+          "phonetic": "/ˈɛksələnt/",
+          "pos": "adj.",
+          "chinese": "優秀的",
+          "sentence": "What an excellent speech!"
+        },
+        {
+          "word": "expensive",
+          "phonetic": "/ɪkˈspɛnsɪv/",
+          "pos": "adj.",
+          "chinese": "昂貴的",
+          "sentence": "Flight tickets are expensive."
+        },
+        {
+          "word": "invite",
+          "phonetic": "/ɪnˈvaɪt/",
+          "pos": "v.",
+          "chinese": "邀請",
+          "sentence": "I invite Tony to my birthday party."
+        },
+        {
+          "word": "jeans",
+          "phonetic": "/dʒinz/",
+          "pos": "n.",
+          "chinese": "牛仔褲",
+          "sentence": "Ed and his girlfriend both wear jeans."
+        },
+        {
+          "word": "Friday",
+          "phonetic": "/ˈfraɪˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期五",
+          "sentence": "This Friday is my birthday."
+        },
+        {
+          "word": "Saturday",
+          "phonetic": "/ˈsætərˌdeɪ/",
+          "pos": "n.",
+          "chinese": "星期六",
+          "sentence": "\"What day is today?\" \"It's Saturday.\""
+        },
+        {
+          "word": "January",
+          "phonetic": "/ˈdʒænjuˌɛri/",
+          "pos": "n.",
+          "chinese": "一月",
+          "sentence": "The party is scheduled on the evening of January 15."
+        },
+        {
+          "word": "February",
+          "phonetic": "/ˈfɛbruˌɛri/",
+          "pos": "n.",
+          "chinese": "二月",
+          "sentence": "Chinese New Year is in February this year."
+        }
+      ]
+    },
+    {
+      "week": 34,
+      "content": [
+        {
+          "word": "watermelon",
+          "phonetic": "/ˈwɔtərˌmɛlən/",
+          "pos": "n.",
+          "chinese": "西瓜",
+          "sentence": "The watermelon is seedless."
+        },
+        {
+          "word": "guava",
+          "phonetic": "/ˈgwɑvə/",
+          "pos": "n.",
+          "chinese": "芭樂",
+          "sentence": "May I have a guava juice?"
+        },
+        {
+          "word": "grapefruit",
+          "phonetic": "/ˈgreɪpˌfrut/",
+          "pos": "n.",
+          "chinese": "葡萄柚",
+          "sentence": "I like eating grapefruit."
+        },
+        {
+          "word": "pear",
+          "phonetic": "/pɛr/",
+          "pos": "n.",
+          "chinese": "梨",
+          "sentence": "I bought a box of pears."
+        },
+        {
+          "word": "strawberry",
+          "phonetic": "/ˈstrɔˌbɛri/",
+          "pos": "n.",
+          "chinese": "草莓",
+          "sentence": "She had strawberry sundae for dessert."
+        },
+        {
+          "word": "lemon",
+          "phonetic": "/ˈlɛmən/",
+          "pos": "n.",
+          "chinese": "檸檬",
+          "sentence": "I like lemon tea."
+        },
+        {
+          "word": "quite",
+          "phonetic": "/kwaɪt/",
+          "pos": "adv.",
+          "chinese": "相當",
+          "sentence": "I quite like opera music."
+        },
+        {
+          "word": "T-shirt",
+          "phonetic": "/ˈtiˌʃɜrt/",
+          "pos": "n.",
+          "chinese": "T恤",
+          "sentence": "How much is this T-shirt?"
+        },
+        {
+          "word": "March",
+          "phonetic": "/mɑrtʃ/",
+          "pos": "n.",
+          "chinese": "三月",
+          "sentence": "We are going to London next March."
+        },
+        {
+          "word": "April",
+          "phonetic": "/ˈeɪprəl/",
+          "pos": "n.",
+          "chinese": "四月",
+          "sentence": "I was born in April. When were you born?"
+        },
+        {
+          "word": "May",
+          "phonetic": "/meɪ/",
+          "pos": "n.",
+          "chinese": "五月",
+          "sentence": "My grandparents will go on holiday in May."
+        }
+      ]
+    },
+    {
+      "week": 35,
+      "content": [
+        {
+          "word": "unhappy",
+          "phonetic": "/ʌnˈhæpi/",
+          "pos": "adj.",
+          "chinese": "不快樂的",
+          "sentence": "Aunt Fang looked unhappy after she read the letter."
+        },
+        {
+          "word": "meet",
+          "phonetic": "/mit/",
+          "pos": "v.",
+          "chinese": "遇見",
+          "sentence": "I met Miss Iris at the gymnasium."
+        },
+        {
+          "word": "boss",
+          "phonetic": "/bɔs/",
+          "pos": "n.",
+          "chinese": "老闆",
+          "sentence": "After working hard for ten years, he becomes a boss."
+        },
+        {
+          "word": "envelope",
+          "phonetic": "/ˈɛnvəˌloʊp/",
+          "pos": "n.",
+          "chinese": "信封",
+          "sentence": "Paste a stamp on the envelope."
+        },
+        {
+          "word": "evening",
+          "phonetic": "/ˈivnɪŋ/",
+          "pos": "n.",
+          "chinese": "傍晚",
+          "sentence": "In the evening, I usually read."
+        },
+        {
+          "word": "playground",
+          "phonetic": "/ˈpleɪˌgraʊnd/",
+          "pos": "n.",
+          "chinese": "遊樂場",
+          "sentence": "All the schoolchildren run about on the playground."
+        },
+        {
+          "word": "lazy",
+          "phonetic": "/ˈleɪzi/",
+          "pos": "adj.",
+          "chinese": "懶惰的",
+          "sentence": "Ben is not stupid, just lazy."
+        },
+        {
+          "word": "June",
+          "phonetic": "/dʒun/",
+          "pos": "n.",
+          "chinese": "六月",
+          "sentence": "The new supermarket will open in June."
+        },
+        {
+          "word": "July",
+          "phonetic": "/dʒʊˈlaɪ/",
+          "pos": "n.",
+          "chinese": "七月",
+          "sentence": "Barbie is going to marry Bob on July 2."
+        },
+        {
+          "word": "August",
+          "phonetic": "/ˈɔgəst/",
+          "pos": "n.",
+          "chinese": "八月",
+          "sentence": "The sports is going to be held in August."
+        },
+        {
+          "word": "September",
+          "phonetic": "/sɛpˈtɛmbər/",
+          "pos": "n.",
+          "chinese": "九月",
+          "sentence": "My little brother will go to elementary school next September."
+        }
+      ]
+    },
+    {
+      "week": 36,
+      "content": [
+        {
+          "word": "quiet",
+          "phonetic": "/ˈkwaɪət/",
+          "pos": "adj.",
+          "chinese": "安靜的",
+          "sentence": "Your brother needs a quiet room because he's working."
+        },
+        {
+          "word": "mistake",
+          "phonetic": "/mɪˈsteɪk/",
+          "pos": "n.",
+          "chinese": "錯誤",
+          "sentence": "The waiter made a mistake over the bill."
+        },
+        {
+          "word": "yet",
+          "phonetic": "/jɛt/",
+          "pos": "adv.",
+          "chinese": "還沒",
+          "sentence": "Has the school begun yet?"
+        },
+        {
+          "word": "Taiwan",
+          "phonetic": "/ˌtaɪˈwɑn/",
+          "pos": "n.",
+          "chinese": "台灣",
+          "sentence": "Taiwan is surrounded by the sea."
+        },
+        {
+          "word": "typhoon",
+          "phonetic": "/taɪˈfun/",
+          "pos": "n.",
+          "chinese": "颱風",
+          "sentence": "The sailboat is struck by a typhoon."
+        },
+        {
+          "word": "badminton",
+          "phonetic": "/ˈbædˌmɪntən/",
+          "pos": "n.",
+          "chinese": "羽毛球",
+          "sentence": "She plays badminton with her neighbor."
+        },
+        {
+          "word": "bake",
+          "phonetic": "/beɪk/",
+          "pos": "v.", "chinese": "烘烤",
+          "sentence": "Let's bake a pizza."
+        },
+        {
+          "word": "kill",
+          "phonetic": "/kɪl/",
+          "pos": "v.",
+          "chinese": "殺",
+          "sentence": "Twenty people were killed in the train crash."
+        },
+        {
+          "word": "museum",
+          "phonetic": "/mjuˈziəm/",
+          "pos": "n.",
+          "chinese": "博物館",
+          "sentence": "We visited a museum of natural history yesterday."
+        },
+        {
+          "word": "newspaper",
+          "phonetic": "/ˈnuzˌpeɪpər/",
+          "pos": "n.",
+          "chinese": "報紙",
+          "sentence": "My mother reads the newspaper every day."
+        },
+        {
+          "word": "December",
+          "phonetic": "/dɪˈsɛmbər/",
+          "pos": "n.",
+          "chinese": "十二月",
+          "sentence": "December is the last month of a year."
+        }
+      ]
+    }
+  ]
+}
