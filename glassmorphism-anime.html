@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文單字學習網 — Glassmorphism Anime</title>
+    <style>
+        /* ============================================
+           GLASSMORPHISM ANIME DESIGN
+           ============================================ */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Poppins:wght@400;600;700;800&display=swap');
+
+        :root {
+            /* Glassmorphism Color Palette */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-bg-strong: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-border-strong: rgba(255, 255, 255, 0.3);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --glass-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
+
+            /* Anime Vibrant Colors */
+            --anime-pink: #FF6B9D;
+            --anime-purple: #C44DFF;
+            --anime-blue: #4D9FFF;
+            --anime-cyan: #4DFFF3;
+            --anime-yellow: #FFE44D;
+            --anime-orange: #FF9A4D;
+
+            /* Text */
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+
+            /* Gradients */
+            --gradient-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            --gradient-pink-purple: linear-gradient(135deg, #FF6B9D, #C44DFF);
+            --gradient-blue-cyan: linear-gradient(135deg, #4D9FFF, #4DFFF3);
+            --gradient-orange-yellow: linear-gradient(135deg, #FF9A4D, #FFE44D);
+            --gradient-rainbow: linear-gradient(135deg, #FF6B9D, #C44DFF, #4D9FFF, #4DFFF3);
+
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+
+            /* Typography */
+            --font-family: 'Poppins', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-base: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 32px;
+            --font-size-4xl: 40px;
+            --font-size-5xl: 48px;
+            --font-size-6xl: 64px;
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-out;
+            --transition-normal: 300ms ease-out;
+            --transition-slow: 500ms ease-out;
+            --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--gradient-bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================
+           ANIMATED BACKGROUND ORBS
+           ============================================ */
+        .bg-orbs {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--anime-pink);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--anime-purple);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--anime-blue);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        .orb-4 {
+            width: 300px;
+            height: 300px;
+            background: var(--anime-cyan);
+            top: 20%;
+            right: 10%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -50px) scale(1.1); }
+            50% { transform: translate(-30px, 30px) scale(0.9); }
+            75% { transform: translate(30px, 50px) scale(1.05); }
+        }
+
+        /* ============================================
+           HEADER — Glass Bar
+           ============================================ */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: var(--space-4) var(--space-6);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-4);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .header-logo {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-pink-purple);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: var(--font-size-xl);
+            color: white;
+            box-shadow: 0 4px 16px rgba(255, 107, 157, 0.4);
+        }
+
+        .header-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        /* ============================================
+           CONTROLS — Glass Panel
+           ============================================ */
+        .controls {
+            max-width: 1400px;
+            margin: var(--space-6) auto;
+            padding: var(--space-4) var(--space-6);
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .select-group {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-2) var(--space-4);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+        }
+
+        .select-group label {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .select-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            padding: var(--space-2) var(--space-4);
+            background: var(--glass-bg-strong);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            color: var(--text-primary);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 120px;
+            transition: all var(--transition-fast);
+        }
+
+        .select-group select:hover {
+            border-color: var(--glass-border-strong);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .select-group select:focus {
+            outline: none;
+            border-color: var(--anime-cyan);
+            box-shadow: 0 0 0 3px rgba(77, 255, 243, 0.2);
+        }
+
+        .select-group select option {
+            background: #1a1a2e;
+            color: white;
+        }
+
+        /* ============================================
+           WORD LIST — Glass Cards Grid
+           ============================================ */
+        .word-list-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-4) var(--space-6) var(--space-16);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-5);
+        }
+
+        .word-list-container .message {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: var(--space-16);
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+        }
+
+        /* ============================================
+           WORD CARD — Glassmorphism
+           ============================================ */
+        .word-card {
+            position: relative;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            transition: all var(--transition-normal);
+            overflow: hidden;
+        }
+
+        .word-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .word-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--glass-border-strong);
+            box-shadow: var(--glass-shadow-lg);
+        }
+
+        .word-card:hover::before {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+        }
+
+        .word-card .word-info {
+            flex: 1;
+            text-align: center;
+        }
+
+        .word-card .english {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-1);
+            letter-spacing: -0.02em;
+        }
+
+        .word-card .phonetic {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+            font-family: 'SF Mono', monospace;
+            margin-bottom: var(--space-3);
+        }
+
+        .word-card .details {
+            font-size: var(--font-size-lg);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .word-card .pos {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            background: var(--gradient-pink-purple);
+            color: white;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            margin-right: var(--space-2);
+            box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+        }
+
+        .word-card .sentence {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-top: var(--space-3);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Play Button — Gradient Circle */
+        .play-audio-btn {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-blue-cyan);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            transition: all var(--transition-bounce);
+            box-shadow: 0 4px 16px rgba(77, 159, 255, 0.4);
+        }
+
+        .play-audio-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(77, 159, 255, 0.6);
+        }
+
+        .play-audio-btn:active {
+            transform: scale(0.95);
+        }
+
+        .play-audio-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ============================================
+           TEACHING MODE BUTTON
+           ============================================ */
+        #toggle-teaching-mode {
+            padding: var(--space-3) var(--space-6);
+            background: var(--gradient-pink-purple);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            box-shadow: 0 4px 16px rgba(255, 107, 157, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        #toggle-teaching-mode:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 24px rgba(255, 107, 157, 0.6);
+        }
+
+        #toggle-teaching-mode:active {
+            transform: scale(0.98);
+        }
+
+        .modal-open #toggle-teaching-mode {
+            background: var(--gradient-orange-yellow);
+            box-shadow: 0 4px 16px rgba(255, 154, 77, 0.4);
+        }
+
+        /* ============================================
+           MODAL — Full Screen Glass
+           ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 12, 41, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content #word-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            max-width: 600px;
+        }
+
+        .modal-content .word-card {
+            display: none;
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border-strong);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-12);
+            box-shadow: var(--glass-shadow-lg);
+        }
+
+        .modal-content .word-card.active {
+            display: flex;
+        }
+
+        .modal-content .word-card .english {
+            font-size: clamp(48px, 15vw, 120px);
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .modal-content .word-card .phonetic {
+            font-size: var(--font-size-xl);
+        }
+
+        .modal-content .word-card .details {
+            font-size: var(--font-size-2xl);
+        }
+
+        .modal-content .word-card .sentence {
+            font-size: var(--font-size-lg);
+        }
+
+        .modal-content .play-audio-btn {
+            width: 72px;
+            height: 72px;
+            font-size: 32px;
+        }
+
+        /* Close Button */
+        .modal-close-btn {
+            position: absolute;
+            top: var(--space-6);
+            right: var(--space-6);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: 24px;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--glass-bg-strong);
+            color: var(--text-primary);
+            border-color: var(--glass-border-strong);
+        }
+
+        /* ============================================
+           SPARKLE ANIMATION
+           ============================================ */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--space-2);
+                text-align: center;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .select-group {
+                justify-content: space-between;
+            }
+
+            .word-list-container {
+                grid-template-columns: 1fr;
+                padding: var(--space-4);
+            }
+
+            .modal-content .word-card {
+                padding: var(--space-8);
+                margin: var(--space-4);
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        :focus-visible {
+            outline: 2px solid var(--anime-cyan);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <div class="header-logo" aria-hidden="true">V</div>
+                <div>
+                    <h1 class="header-title">英文單字學習網</h1>
+                    <p class="header-subtitle">臺中市清水區槺榔國民小學</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="select-group">
+            <label for="grade-select">選擇年級：</label>
+            <select id="grade-select">
+                <option value="">--請選擇--</option>
+                <option value="3">三年級</option>
+                <option value="4">四年級</option>
+                <option value="5">五年級</option>
+                <option value="6">六年級</option>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="week-select">選擇週次：</label>
+            <select id="week-select">
+                <option value="">--請選擇--</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Word List -->
+    <main id="word-list" class="word-list-container" role="main">
+        <p class="message">請選擇年級與週次來開始學習</p>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gradeSelect = document.getElementById('grade-select');
+            const weekSelect = document.getElementById('week-select');
+            const wordListContainer = document.getElementById('word-list');
+
+            let controlsContainer = null;
+            let currentGradeData = null;
+            let isAudioPlaying = false;
+
+            // --- 教學模式相關變數 ---
+            let currentCardIndex = 0;
+            let wordCards = [];
+            let isAutoplaying = false;
+            let autoplayTimeoutId = null;
+
+            const toggleModeBtn = document.createElement('button');
+            let modalOverlay = null;
+            let modalWordList = null;
+
+            // --- TTS 相關 ---
+            let ttsVoices = [];
+            let ttsSupported = 'speechSynthesis' in window;
+
+            function loadTtsVoices() {
+                if (!ttsSupported) return;
+                ttsVoices = speechSynthesis.getVoices();
+            }
+
+            if (ttsSupported) {
+                loadTtsVoices();
+                speechSynthesis.onvoiceschanged = loadTtsVoices;
+            }
+
+            function getPreferredVoice() {
+                if (ttsVoices.length === 0) ttsVoices = speechSynthesis.getVoices();
+                return ttsVoices.find(v => v.lang === 'en-US' && v.name.includes('Google'))
+                    || ttsVoices.find(v => v.lang === 'en-US')
+                    || ttsVoices.find(v => v.lang.startsWith('en'))
+                    || ttsVoices[0] || null;
+            }
+
+            function speak(text, rate = 0.75) {
+                return new Promise((resolve) => {
+                    if (!ttsSupported) { resolve(); return; }
+                    speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = 'en-US';
+                    utterance.rate = rate;
+                    utterance.pitch = 1.0;
+                    const voice = getPreferredVoice();
+                    if (voice) utterance.voice = voice;
+                    utterance.onend = () => resolve();
+                    utterance.onerror = () => resolve();
+                    const timeout = setTimeout(() => resolve(), 10000);
+                    utterance.onend = () => { clearTimeout(timeout); resolve(); };
+                    speechSynthesis.speak(utterance);
+                });
+            }
+
+            function stopSpeaking() {
+                if (ttsSupported) speechSynthesis.cancel();
+            }
+
+            // 載入年級資料
+            async function handleGradeChange() {
+                const selectedGrade = gradeSelect.value;
+                weekSelect.innerHTML = '<option value="">--請選擇--</option>';
+                wordListContainer.innerHTML = '';
+                currentGradeData = null;
+                if (toggleModeBtn) toggleModeBtn.style.display = 'none';
+
+                if (!selectedGrade) {
+                    displayMessage("請先選擇年級。");
+                    weekSelect.disabled = true;
+                    return;
+                }
+
+                weekSelect.disabled = true;
+                displayMessage("正在載入年級資料...");
+
+                try {
+                    const response = await fetch(`./document/grade${selectedGrade}.json`);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    currentGradeData = await response.json();
+                    populateWeekSelect();
+                    displayMessage("請選擇週次來顯示單字。");
+                    weekSelect.disabled = false;
+                } catch (error) {
+                    console.error("無法載入單字資料:", error);
+                    displayMessage(`錯誤：無法載入 ${selectedGrade} 年級的資料。`);
+                }
+            }
+
+            function populateWeekSelect() {
+                if (!currentGradeData || !currentGradeData.weeks) return;
+                currentGradeData.weeks.forEach(weekInfo => {
+                    const option = document.createElement('option');
+                    option.value = weekInfo.week;
+                    option.textContent = `第 ${weekInfo.week} 週`;
+                    weekSelect.appendChild(option);
+                });
+            }
+
+            function displayWordsForWeek() {
+                const selectedGrade = gradeSelect.value;
+                const selectedWeek = weekSelect.value;
+                wordListContainer.innerHTML = '';
+                if (toggleModeBtn) toggleModeBtn.style.display = 'none';
+
+                if (!selectedGrade || !selectedWeek) return;
+
+                const weekData = currentGradeData.weeks.find(w => w.week.toString() === selectedWeek);
+                if (!weekData || weekData.content.length === 0) {
+                    displayMessage("這個組合沒有找到任何單字。");
+                    return;
+                }
+
+                weekData.content.forEach(word => {
+                    const card = createWordCard(word, selectedGrade, selectedWeek);
+                    wordListContainer.appendChild(card);
+                });
+
+                const mainWordCards = wordListContainer.querySelectorAll('.word-card');
+                if (toggleModeBtn && mainWordCards.length > 0) {
+                    toggleModeBtn.style.display = 'inline-block';
+                }
+            }
+
+            function createWordCard(word, grade, week) {
+                const card = document.createElement('div');
+                card.className = 'word-card';
+                card.innerHTML = `
+                    <div class="word-info">
+                        <h2 class="english">${word.word}</h2>
+                        <p class="phonetic">${word.phonetic || ''}</p>
+                        <p class="details"><span class="pos">${word.pos || ''}</span> ${word.chinese || ''}</p>
+                        <p class="sentence">${word.sentence || ''}</p>
+                    </div>
+                    <button class="play-audio-btn" data-word="${word.word}" data-sentence="${word.sentence || ''}" aria-label="播放 ${word.word} 發音">
+                        &#9658;
+                    </button>
+                `;
+                const playBtn = card.querySelector('.play-audio-btn');
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    playAudioForCard(card);
+                });
+                return card;
+            }
+
+            function displayMessage(message) {
+                wordListContainer.innerHTML = `<p class="message">${message}</p>`;
+            }
+
+            // --- 教學模式 ---
+            async function playAudioForCard(card) {
+                if (isAudioPlaying) return;
+                const playBtn = card.querySelector('.play-audio-btn');
+                if (!playBtn) { await new Promise(r => setTimeout(r, 2000)); return; }
+
+                isAudioPlaying = true;
+                playBtn.disabled = true;
+
+                const word = playBtn.dataset.word || '';
+                const sentence = playBtn.dataset.sentence || '';
+
+                if (ttsSupported && word) {
+                    await speak(word, 0.7);
+                    if (sentence) {
+                        await new Promise(r => setTimeout(r, 300));
+                        await speak(sentence, 0.75);
+                    }
+                }
+
+                isAudioPlaying = false;
+                playBtn.disabled = false;
+            }
+
+            async function startAutoplay() {
+                isAutoplaying = true;
+                while (isAutoplaying && wordCards.length > 0) {
+                    const currentCard = wordCards[currentCardIndex];
+                    if (!currentCard) break;
+                    updateActiveCard();
+                    await playAudioForCard(currentCard);
+                    if (!isAutoplaying) break;
+                    await new Promise(r => { autoplayTimeoutId = setTimeout(r, 1500); });
+                    if (!isAutoplaying) break;
+                    showNextCard();
+                }
+            }
+
+            function enterTeachingMode() {
+                const mainWordCards = wordListContainer.querySelectorAll('.word-card');
+                if (mainWordCards.length === 0) return;
+
+                modalWordList.innerHTML = '';
+                mainWordCards.forEach(card => modalWordList.appendChild(card.cloneNode(true)));
+                wordCards = modalWordList.querySelectorAll('.word-card');
+
+                modalOverlay.classList.add('active');
+                document.body.classList.add('modal-open');
+                document.body.style.overflow = 'hidden';
+                toggleModeBtn.textContent = '結束教學';
+                currentCardIndex = 0;
+                startAutoplay();
+            }
+
+            function exitTeachingMode() {
+                isAutoplaying = false;
+                clearTimeout(autoplayTimeoutId);
+                stopSpeaking();
+                modalOverlay.classList.remove('active');
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                toggleModeBtn.textContent = '教學模式';
+                if (modalWordList) modalWordList.innerHTML = '';
+                wordCards = [];
+            }
+
+            function updateActiveCard() {
+                wordCards.forEach((card, index) => {
+                    if (index === currentCardIndex) {
+                        card.classList.add('active');
+                        adjustFontSize(card);
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            }
+
+            function adjustFontSize(card) {
+                const englishEl = card.querySelector('.english');
+                const container = card.querySelector('.word-info');
+                if (!englishEl || !container) return;
+                let fontSize = 20;
+                englishEl.style.fontSize = `${fontSize}rem`;
+                while (englishEl.scrollWidth > container.clientWidth && fontSize > 1) {
+                    fontSize -= 0.5;
+                    englishEl.style.fontSize = `${fontSize}rem`;
+                }
+            }
+
+            function showNextCard() {
+                currentCardIndex = (currentCardIndex + 1) % wordCards.length;
+            }
+
+            function setupControlsAndModal() {
+                controlsContainer = document.querySelector('.controls');
+                if (!controlsContainer) {
+                    controlsContainer = document.createElement('div');
+                    controlsContainer.className = 'controls';
+                    document.body.insertBefore(controlsContainer, wordListContainer);
+                }
+
+                toggleModeBtn.id = 'toggle-teaching-mode';
+                toggleModeBtn.textContent = '教學模式';
+                toggleModeBtn.style.display = 'none';
+                controlsContainer.appendChild(toggleModeBtn);
+
+                toggleModeBtn.addEventListener('click', () => {
+                    if (document.body.classList.contains('modal-open')) {
+                        exitTeachingMode();
+                    } else {
+                        enterTeachingMode();
+                    }
+                });
+
+                modalOverlay = document.createElement('div');
+                modalOverlay.className = 'modal-overlay';
+
+                const modalContent = document.createElement('div');
+                modalContent.className = 'modal-content';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'modal-close-btn';
+                closeBtn.innerHTML = '&times;';
+                closeBtn.setAttribute('aria-label', '關閉教學模式');
+                closeBtn.onclick = exitTeachingMode;
+
+                modalWordList = document.createElement('div');
+                modalWordList.id = 'word-list';
+
+                modalContent.appendChild(modalWordList);
+                modalContent.appendChild(closeBtn);
+                modalOverlay.appendChild(modalContent);
+                document.body.appendChild(modalOverlay);
+
+                document.addEventListener('keydown', (e) => {
+                    if (document.body.classList.contains('modal-open') && e.key === 'Escape') {
+                        exitTeachingMode();
+                    }
+                });
+            }
+
+            // 程式起始點
+            setupControlsAndModal();
+            displayMessage("請先選擇年級。");
+            weekSelect.disabled = true;
+            gradeSelect.addEventListener('change', handleGradeChange);
+            weekSelect.addEventListener('change', displayWordsForWeek);
+        });
+    </script>
+</body>
+</html>
