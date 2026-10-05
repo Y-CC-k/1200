@@ -970,6 +970,201 @@
         });
     </script>
 
+    <!-- ==================== 1. 聊天機器人 UI 開始 ==================== -->
+<style>
+  /* 浮動聊天按鈕 */
+  .floating-chat-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff; /* 按鈕顏色，藍色 */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* 確保按鈕永遠在最上層 */
+    transition: transform 0.2s ease;
+  }
+  .floating-chat-btn:hover {
+    transform: scale(1.1); /* 滑鼠移上去稍微放大 */
+  }
+
+  /* 浮動對話框主體 */
+  .chat-popup-box {
+    position: fixed;
+    bottom: 105px; /* 高於按鈕，避免重疊 */
+    right: 30px;
+    width: 360px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    display: none; /* 預設隱藏 */
+    flex-direction: column;
+    overflow: hidden;
+    font-family: sans-serif;
+    z-index: 9999;
+    border: 1px solid #e0e0e0;
+  }
+
+  /* 對話框頂部標題列 */
+  .chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .chat-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* 訊息顯示區域 */
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* 訊息對話泡泡基本樣式 */
+  .msg-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .msg-user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end; /* 使用者訊息靠右 */
+    border-bottom-right-radius: 2px;
+  }
+  .msg-ai {
+    background-color: #e9ecef;
+    color: #333;
+    align-self: flex-start; /* AI 訊息靠左 */
+    border-bottom-left-radius: 2px;
+  }
+
+  /* 底部輸入區域 */
+  .chat-input-area {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    background: #fff;
+  }
+  .chat-input-area input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 14px;
+  }
+  .chat-input-area button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+</style>
+
+<!-- 浮動按鈕 -->
+<button class="floating-chat-btn" id="chatBtn" onclick="toggleChat()">💬</button>
+
+<!-- 浮動對話視窗 -->
+<div class="chat-popup-box" id="chatBox">
+  <div class="chat-header">
+    <span>AI 線上客服</span>
+    <button class="chat-close-btn" onclick="toggleChat()">×</button>
+  </div>
+  
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg-bubble msg-ai">您好！請問今天有什麼我可以幫您的嗎？</div>
+  </div>
+  
+  <div class="chat-input-area">
+    <input type="text" id="userInput" placeholder="輸入訊息..." onkeypress="handleKeyPress(event)">
+    <button onclick="sendMessage()">發送</button>
+  </div>
+</div>
+
+<script>
+  // 切換視窗顯示/隱藏
+  function toggleChat() {
+    const chatBox = document.getElementById('chatBox');
+    const chatBtn = document.getElementById('chatBtn');
+    
+    if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+      chatBox.style.display = 'flex';
+      chatBtn.innerText = '❌'; // 打開後按鈕變成叉叉
+    } else {
+      chatBox.style.display = 'none';
+      chatBtn.innerText = '💬'; // 關閉後變回對話圖示
+    }
+  }
+
+  // 監聽 Enter 鍵發送
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      sendMessage();
+    }
+  }
+
+  // 發送訊息邏輯
+  async function sendMessage() {
+    const inputElement = document.getElementById('userInput');
+    const messageText = inputElement.value.trim();
+    if (!messageText) return;
+
+    const messagesContainer = document.getElementById('chatMessages');
+
+    // 1. 渲染使用者訊息（靠右藍色泡泡）
+    messagesContainer.innerHTML += `<div class="msg-bubble msg-user">${messageText}</div>`;
+    inputElement.value = ''; // 清空輸入框
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // 畫面自動捲動到底部
+
+    try {
+      // 2. 呼叫你的免費 Vercel 後端 API（請替換成你實際部署好的網址）
+      const response = await fetch('https://vercel.app', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageText })
+      });
+      const data = await response.json();
+
+      // 3. 渲染 AI 回覆（靠左灰色泡泡）
+      messagesContainer.innerHTML += `<div class="msg-bubble msg-ai">${data.reply}</div>`;
+    } catch (error) {
+      messagesContainer.innerHTML += `<div class="msg-bubble msg-ai" style="color:red;">連線失敗，請稍後再試。</div>`;
+    }
+
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // 再次捲動到底部
+  }
+</script>
+<!-- ==================== 聊天機器人 UI 結束 ==================== -->
+
 
 </body>
 </html>
