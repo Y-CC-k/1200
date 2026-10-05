@@ -1147,7 +1147,7 @@
 
     try {
       // 2. 呼叫你的免費 Vercel 後端 API（請替換成你實際部署好的網址）
-      const response = await fetch('https://1200-zeta.vercel.app/', {
+      const response = await fetch('https://1200-zeta.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageText })
