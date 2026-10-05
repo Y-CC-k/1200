@@ -44,9 +44,41 @@ export default async function handler(req, res) {
       })
     });
     
+ //   const data = await response.json();
+ //   const reply = data.candidates[0].content.parts[0].text; // 修正了原本語法可能漏掉的陣列索引
+ //   return res.status(200).json({ reply });
+
+
+    // 呼叫 Google Gemini API 之後...
     const data = await response.json();
-    const reply = data.candidates[0].content.parts[0].text; // 修正了原本語法可能漏掉的陣列索引
-    return res.status(200).json({ reply });
+    
+    // ⚠️ 請確保這行有精準寫到陣列索引 [0]
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
+      const reply = data.candidates[0].content.parts[0].text;
+      return res.status(200).json({ reply: reply });
+    } else {
+      // 如果 Google 噴出錯誤（例如 API Key 錯了、或被限制流量），把完整的錯誤丟回前端
+      return res.status(200).json({ error: JSON.stringify(data) });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
