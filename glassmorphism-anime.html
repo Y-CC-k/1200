@@ -1154,6 +1154,13 @@
       });
       const data = await response.json();
 
+        let aiReply = "抱歉，系統發生錯誤。";
+      if (data && data.reply) {
+        aiReply = data.reply;
+      } else if (data && data.error) {
+        aiReply = `後端錯誤: ${data.error}`;
+      }
+
       // 3. 渲染 AI 回覆（靠左灰色泡泡）
       messagesContainer.innerHTML += `<div class="msg-bubble msg-ai">${data.reply}</div>`;
     } catch (error) {
