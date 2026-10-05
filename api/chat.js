@@ -19,11 +19,11 @@ export default async function handler(req, res) {
   }
   
   const { message } = req.body;
-  const apiKey = process.env.GEMINI_API_KEY; // 從 Vercel 環境變數讀取金鑰
+  const apiKey = process.env.OPENROUTER_API_KEY; // 從 Vercel 環境變數讀取 OpenRouter 金鑰
 
   // 檢查 Vercel 後台有沒有設定 API Key
   if (!apiKey) {
-    return res.status(500).json({ error: 'Vercel 後台尚未設定 GEMINI_API_KEY 環境變數。' });
+    return res.status(500).json({ error: 'Vercel 後台尚未設定 OPENROUTER_API_KEY 環境變數。' });
   }
 
   // ==========================================
@@ -59,47 +59,50 @@ export default async function handler(req, res) {
   `;
 
   // ==========================================
-  // 4. 打包送給 Google Gemini API
+  // 4. 打包送給 OpenRouter API (OpenAI 相容格式)
   // ==========================================
   try {
-    // 使用 Gemini 2.5 Flash 模型，速度快且免費額度非常慷慨
-    const response = await fetch(`https://googleapis.com{apiKey}`, {
+    // 使用 OpenRouter，支援 400+ 模型，包含 Gemini 全系列
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://1200-klnes.vercel.app',  // 你的網域 (OpenRouter 建議提供)
+        'X-Title': '1200 English Learning'  // 你的應用名稱 (OpenRouter 建議提供)
+      },
       body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              { text: systemInstruction },
-              { text: `使用者提問：${message}` }
-            ]
-          }
-        ]
+        model: 'google/gemini-2.5-flash',  // 可改為 google/gemini-2.5-pro, anthropic/claude-3.5-sonnet 等
+        messages: [
+          { role: 'system', content: systemInstruction },
+          { role: 'user', content: message }
+        ],
+        max_tokens: 2048,
+        temperature: 0.7
       })
     });
     
     const data = await response.json();
 
-    // 檢查 Google API 是否回傳錯誤（例如 API Key 被封鎖或格式錯誤）
+    // 檢查 OpenRouter API 是否回傳錯誤
     if (data.error) {
-      return res.status(200).json({ error: `Google API 錯誤: ${data.error.message}` });
+      return res.status(200).json({ error: `OpenRouter 錯誤: ${data.error.message}` });
     }
 
     // ==========================================
-    // 5. 精准拆解 Gemini 回傳的資料結構，防止出現 undefined
+    // 5. 精准拆解 OpenRouter 回傳的資料結構 (OpenAI 格式)
     // ==========================================
     if (
-      data.candidates && 
-      data.candidates[0] && 
-      data.candidates[0].content && 
-      data.candidates[0].content.parts && 
-      data.candidates[0].content.parts[0]
+      data.choices && 
+      data.choices[0] && 
+      data.choices[0].message && 
+      data.choices[0].message.content
     ) {
-      const reply = data.candidates[0].content.parts[0].text;
+      const reply = data.choices[0].message.content;
       return res.status(200).json({ reply: reply });
     } else {
       // 萬一結構不符合預期，把完整的原始 JSON 吐回前端以便除錯
-      return res.status(200).json({ error: '無法解析 Gemini 的回覆結構', raw: data });
+      return res.status(200).json({ error: '無法解析 OpenRouter 的回覆結構', raw: data });
     }
 
   } catch (error) {
