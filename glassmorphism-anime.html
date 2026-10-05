@@ -1111,59 +1111,77 @@
 </div>
 
 <script>
-  // 切換視窗顯示/隱藏
+  // 1. 切換聊天視窗顯示或隱藏
   function toggleChat() {
     const chatBox = document.getElementById('chatBox');
     const chatBtn = document.getElementById('chatBtn');
-
+    
+    if (!chatBox || !chatBtn) return; // 安全防禦，防止找不到元素
+    
     if (chatBox.style.display === 'none' || chatBox.style.display === '') {
       chatBox.style.display = 'flex';
-      chatBtn.innerText = '❌'; // 打開後按鈕變成叉叉
+      chatBtn.innerText = '❌'; 
     } else {
       chatBox.style.display = 'none';
-      chatBtn.innerText = '💬'; // 關閉後變回對話圖示
+      chatBtn.innerText = '💬'; 
     }
   }
 
-  // 監聽 Enter 鍵發送
+  // 2. 監聽 Enter 鍵
   function handleKeyPress(event) {
     if (event.key === 'Enter') {
       sendMessage();
     }
   }
 
-  // 發送訊息邏輯
+  // 3. 發送訊息核心邏輯
   async function sendMessage() {
     const inputElement = document.getElementById('userInput');
+    if (!inputElement) return;
+    
     const messageText = inputElement.value.trim();
-    if (!messageText) return;
+    if (!messageText) return; 
 
     const messagesContainer = document.getElementById('chatMessages');
+    if (!messagesContainer) return;
 
-    // 1. 渲染使用者訊息（靠右藍色泡泡）
+    // A. 顯示使用者訊息
     messagesContainer.innerHTML += `<div class="msg-bubble msg-user">${messageText}</div>`;
-    inputElement.value = ''; // 清空輸入框
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // 畫面自動捲動到底部
+    inputElement.value = ''; 
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; 
 
     try {
-      // 2. 呼叫你的免費 Vercel 後端 API（請替換成你實際部署好的網址）
-      const response = await fetch('https://1200-zeta.vercel.app', {
-      const response = await fetch('https://1200-zeta.vercel.app/api/chat', {
+      // B. 呼叫你的免費 Vercel 後端 API
+      const response = await fetch('https://vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageText })
       });
+      
       const data = await response.json();
 
-      // 3. 渲染 AI 回覆（靠左灰色泡泡）
-      messagesContainer.innerHTML += `<div class="msg-bubble msg-ai">${data.reply}</div>`;
+      // C. 解析後端回傳的資料
+      if (response.ok && data && data.reply) {
+        messagesContainer.innerHTML += `<div class="msg-bubble msg-ai">${data.reply}</div>`;
+      } else if (data && data.error) {
+        messagesContainer.innerHTML += `<div class="msg-bubble msg-error">⚠️ 錯誤：${data.error}</div>`;
+      } else {
+        messagesContainer.innerHTML += `<div class="msg-bubble msg-error">⚠️ 系統接收到異常格式資料。</div>`;
+      }
+
     } catch (error) {
-      messagesContainer.innerHTML += `<div class="msg-bubble msg-ai" style="color:red;">連線失敗，請稍後再試。</div>`;
+      messagesContainer.innerHTML += `<div class="msg-bubble msg-error">⚠️ 連線失敗！請檢查 Vercel 服務是否正常。</div>`;
+      console.error('Chat Error:', error);
     }
 
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // 再次捲動到底部
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 </script>
+
+
+
+
+    
 <!-- ==================== 聊天機器人 UI 結束 ==================== -->
      
 </body>
