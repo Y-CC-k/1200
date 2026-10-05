@@ -1152,7 +1152,11 @@
 
     try {
       // B. 呼叫你的免費 Vercel 後端 API
-      const response = await fetch('https://1200-zeta.vercel.app/api/chat.js', {
+      // 可透過 <meta name="api-url" content="..."> 或環境變數覆蓋
+      const API_URL = document.querySelector('meta[name="api-url"]')?.content 
+                    || window.__API_URL__ 
+                    || '/api/chat';  // 相對路徑，適用於同源部署
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageText })
