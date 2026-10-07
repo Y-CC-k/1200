@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教育部國字標準字體筆順動畫 - 下拉式選字</title>
+  <style>
+    :root { --bg:#f5f5f5; --text:#333; --primary:#2f7bff; --border:#ddd; }
+    body { margin:0; padding:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC",Arial,sans-serif; background:var(--bg); color:var(--text); display:flex; flex-direction:column; height:100vh; }
+    header { padding:1rem 1.5rem; background:#fff; border-bottom:1px solid var(--border); box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    h1 { margin:0 0 .75rem 0; font-size:clamp(1.25rem,2vw,1.75rem); font-weight:600; }
+    .controls { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; }
+    .select-group { display:flex; align-items:center; gap:.5rem; }
+    label { font-size:1rem; font-weight:500; white-space:nowrap; }
+    select { min-width:160px; padding:.5rem .75rem; font-size:1rem; border:1px solid var(--border); border-radius:6px; background:#fff; cursor:pointer; }
+    select:hover { border-color:var(--primary); }
+    select:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 2px rgba(47,123,255,.15); }
+    .info { font-size:.95rem; color:#666; }
+    .info code { background:#f0f0f0; padding:.1rem .4rem; border-radius:4px; font-size:.9rem; }
+    main { flex:1; padding:1rem; display:flex; flex-direction:column; gap:1rem; overflow:hidden; }
+    .frame-container { flex:1; width:100%; border:1px solid var(--border); border-radius:8px; overflow:hidden; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.05); }
+    iframe { width:100%; height:100%; border:none; }
+    .placeholder { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#999; text-align:center; padding:1rem; }
+    footer { padding:.75rem 1.5rem; background:#fff; border-top:1px solid var(--border); font-size:.9rem; color:#666; text-align:center; }
+    a { color:var(--primary); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>教育部《國字標準字體筆順學習網》－ 筆順動畫</h1>
+    <div class="controls">
+      <div class="select-group">
+        <label for="charSelect">選擇字：</label>
+        <select id="charSelect">
+          <option value="">-- 請選擇 --</option>
+        </select>
+      </div>
+      <div class="info">目前選取：<span id="currentChar">無</span>｜ID：<code id="currentId">-</code></div>
+    </div>
+  </header>
+  <main>
+    <div class="frame-container">
+      <iframe id="animFrame" title="國字筆順動畫" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+      <div id="placeholder" class="placeholder">
+        <p>請從上方下拉選單選擇一個字</p>
+        <p>即可在此呈現該字的筆順動畫頁面</p>
+      </div>
+    </div>
+  </main>
+  <footer>資料來源：<a href="https://stroke-order.learningweb.moe.edu.tw/" target="_blank" rel="noopener noreferrer">教育部《國字標準字體筆順學習網》</a></footer>
+  <script>
+    const charSelect=document.getElementById('charSelect');
+    const animFrame=document.getElementById('animFrame');
+    const placeholder=document.getElementById('placeholder');
+    const currentCharEl=document.getElementById('currentChar');
+    const currentIdEl=document.getElementById('currentId');
+    const JSON_URL='./stroke_chars.json';
+    const WORD_QUERY='大字好的一個';
+    async function loadChars(){
+      try{
+        const res=await fetch(JSON_URL);
+        if(!res.ok) throw new Error('無法載入 JSON');
+        const data=await res.json();
+        data.forEach(item=>{
+          const opt=document.createElement('option');
+          opt.value=item.id; opt.textContent=item.char; opt.dataset.char=item.char;
+          charSelect.appendChild(opt);
+        });
+      }catch(e){ console.error(e); }
+    }
+    function showAnimation(id,char){
+      if(!id){ animFrame.src='about:blank'; animFrame.style.display='none'; placeholder.style.display='flex'; currentCharEl.textContent='無'; currentIdEl.textContent='-'; return; }
+      const url='https://stroke-order.learningweb.moe.edu.tw/dictView.jsp?ID='+encodeURIComponent(id)+'&WORD='+encodeURIComponent(WORD_QUERY)+'&ID2=0';
+      animFrame.src=url; animFrame.style.display='block'; placeholder.style.display='none'; currentCharEl.textContent=char; currentIdEl.textContent=id;
+    }
+    charSelect.addEventListener('change',e=>{
+      const sel=e.target.selectedOptions[0]; const id=e.target.value; const char=sel?.dataset.char||''; showAnimation(id,char);
+    });
+    animFrame.style.display='none'; placeholder.style.display='flex';
+    loadChars();
+  </script>
+</body>
+</html>
