@@ -54875,13 +54875,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         function initData() {
-            // 由於我們無法直接在瀏覽器中讀取本地 CSV，
-            // 這裡使用預設的種子數據作為示例
-            // 實際項目中應使用伺服器端解析 CSV 或將數據嵌入
-            
-            // 為了演示，我們創建一小樣本數據
-            // 實際項目應替換為完整 CSV 解析結果
-            console.log('數據初始化 - 請替換為實際 CSV 解析結果');
+            // 從 script 標籤內嵌的 csvData 讀取資料
+            allData = csvData || [];
+            csvRowCount.textContent = allData.length;
+            renderCards(allData);
+            updatePagination();
+            updateStats();
         }
 
         // 模擬載入 CSV 數據 (實際應從後端 API 或文件讀取)
