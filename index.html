@@ -480,51 +480,69 @@
         }
 
         .modal-content #word-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            padding: 0;
+            position: relative;
+            display: block;
+            width: min(92vw, 1100px);
+            height: min(86vh, 680px);
+            max-width: none;
             margin: 0;
-            max-width: 600px;
+            padding: 0;
         }
 
         .modal-content .word-card {
-            display: none;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-5);
+            padding: var(--space-12) var(--space-16);
             background: var(--glass-bg-strong);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--glass-border-strong);
             border-radius: var(--radius-2xl);
-            padding: var(--space-12);
             box-shadow: var(--glass-shadow-lg);
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.98);
+            transition: opacity var(--transition-normal), transform var(--transition-normal);
         }
 
         .modal-content .word-card.active {
-            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        .modal-content .word-card .word-info {
+            flex: 0 0 auto;
+            width: 100%;
+            text-align: center;
         }
 
         .modal-content .word-card .english {
-            font-size: clamp(48px, 15vw, 120px);
+            font-size: clamp(64px, 10vw, 160px);
             line-height: 1.1;
             white-space: nowrap;
         }
 
         .modal-content .word-card .phonetic {
-            font-size: var(--font-size-xl);
-        }
-
-        .modal-content .word-card .details {
             font-size: var(--font-size-2xl);
         }
 
+        .modal-content .word-card .details {
+            font-size: var(--font-size-3xl);
+        }
+
         .modal-content .word-card .sentence {
-            font-size: var(--font-size-lg);
+            font-size: var(--font-size-xl);
         }
 
         .modal-content .play-audio-btn {
-            width: 72px;
-            height: 72px;
-            font-size: 32px;
+            width: 80px;
+            height: 80px;
+            font-size: 34px;
         }
 
         /* Close Button */
@@ -595,9 +613,18 @@
                 padding: var(--space-4);
             }
 
+            .modal-content #word-list {
+                width: 94vw;
+                height: min(82vh, 560px);
+            }
+
             .modal-content .word-card {
-                padding: var(--space-8);
-                margin: var(--space-4);
+                padding: var(--space-6);
+                margin: 0;
+            }
+
+            .modal-content .word-card .english {
+                font-size: clamp(40px, 13vw, 96px);
             }
         }
 
@@ -1747,6 +1774,9 @@
                 document.body.style.overflow = 'hidden';
                 toggleModeBtn.textContent = '結束教學';
                 currentCardIndex = 0;
+                // 預先計算所有卡片的字級，避免換字時才縮放造成閃爍
+                wordCards.forEach(card => adjustFontSize(card));
+                updateActiveCard();
                 startAutoplay();
             }
 
@@ -1777,11 +1807,18 @@
                 const englishEl = card.querySelector('.english');
                 const container = card.querySelector('.word-info');
                 if (!englishEl || !container) return;
-                let fontSize = 20;
-                englishEl.style.fontSize = `${fontSize}rem`;
-                while (englishEl.scrollWidth > container.clientWidth && fontSize > 1) {
-                    fontSize -= 0.5;
-                    englishEl.style.fontSize = `${fontSize}rem`;
+
+                const available = container.clientWidth;
+                if (!available) return;
+
+                const maxSize = Math.min(200, Math.round(window.innerHeight * 0.26));
+                let fontSize = maxSize;
+                englishEl.style.fontSize = `${fontSize}px`;
+
+                let guard = 0;
+                while (englishEl.scrollWidth > available && fontSize > 40 && guard++ < 300) {
+                    fontSize -= 2;
+                    englishEl.style.fontSize = `${fontSize}px`;
                 }
             }
 
