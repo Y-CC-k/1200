@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每週測驗（含聽寫） — 英文單字學習網</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ============================================
+           每週測驗 — 補充樣式
+           ============================================ */
+        .controls { align-items: flex-end; }
+
+        .start-quiz-btn {
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .start-quiz-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .start-quiz-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+        .start-quiz-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+        /* 首頁說明卡 */
+        .intro {
+            max-width: 720px;
+            margin: 8px auto 40px;
+            padding: 28px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .intro h2 { font-size: 1.25rem; margin-bottom: 12px; }
+
+        .intro ul { margin: 0 0 16px 20px; color: var(--text-secondary); }
+        .intro li { margin-bottom: 6px; }
+
+        .intro .tip {
+            padding: 12px 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* 題型標籤 */
+        .quiz-type-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .quiz-type-badge.dictation { background: #FEF3C7; color: #D97706; }
+        .quiz-type-badge.choice { background: var(--primary-light); color: var(--primary); }
+
+        /* 聽寫：喇叭播放區 */
+        .dictation-player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+        }
+
+        .play-word-btn {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-size: 2.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .play-word-btn:hover { transform: scale(1.06); }
+        .play-word-btn:active { transform: scale(0.96); }
+        .play-word-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+        .dictation-player .hint-line {
+            min-height: 1.6em;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .dictation-player .hint-word {
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.15em;
+        }
+
+        /* 結果複習 */
+        .review-list {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            background: var(--bg);
+            border-left: 4px solid var(--success);
+            font-size: 0.95rem;
+        }
+
+        .review-item.wrong { border-left-color: var(--danger); }
+        .review-item .r-word { font-weight: 700; color: var(--primary); }
+        .review-item .r-answer { color: var(--text-secondary); }
+        .review-item.wrong .r-answer { color: var(--danger); font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .intro { padding: 20px; }
+            .review-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>英文單字學習網 — 每週測驗</h1>
+        <p>臺中市清水區槺榔國民小學・聽寫 + 詞義選擇</p>
+    </header>
+
+    <div class="controls">
+        <div class="select-group">
+            <label for="grade-select">年級：</label>
+            <select id="grade-select">
+                <option value="">--請選擇--</option>
+                <option value="3">三年級</option>
+                <option value="4">四年級</option>
+                <option value="5">五年級</option>
+                <option value="6">六年級</option>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="week-select">週次：</label>
+            <select id="week-select" disabled>
+                <option value="">--請選擇--</option>
+            </select>
+        </div>
+        <button id="start-quiz" class="start-quiz-btn" disabled>開始測驗</button>
+    </div>
+
+    <main class="intro">
+        <h2>測驗說明</h2>
+        <ul>
+            <li><strong>聽寫</strong>：按喇叭聽單字發音，拼出正確英文並送出。</li>
+            <li><strong>詞義選擇</strong>：看英文單字，選出正確的中文意思。</li>
+            <li>每週共 <strong>8 個單字</strong>，每個單字都有一題聽寫與一題選擇。</li>
+            <li>可隨時按「提示」查看發音、字首與中文意思；按「再聽一次」重播發音。</li>
+        </ul>
+        <div class="tip">請先選擇年級與週次，再按「開始測驗」。</div>
+    </main>
+
+    <!-- 測驗視窗 -->
+    <div id="quiz-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+        <div class="modal-content">
+            <button class="modal-close" id="quiz-close" aria-label="結束測驗">&times;</button>
+
+            <!-- 進行中 -->
+            <div id="quiz-body" hidden>
+                <div class="quiz-header">
+                    <h2 id="quiz-title">每週測驗</h2>
+                    <p class="modal-subtitle" id="quiz-subtitle"></p>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                        </div>
+                        <p class="quiz-progress-text" id="quiz-progress-text"></p>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <span class="quiz-type-badge" id="q-type"></span>
+
+                    <!-- 聽寫題型 -->
+                    <div id="q-dictation">
+                        <div class="dictation-player">
+                            <button class="play-word-btn" id="q-play" aria-label="播放單字發音">&#128266;</button>
+                            <div class="hint-line" id="q-hint"></div>
+                        </div>
+                        <div class="spelling-input-area">
+                            <input type="text" class="spelling-input" id="q-input"
+                                   autocomplete="off" autocorrect="off" autocapitalize="off"
+                                   spellcheck="false" placeholder="請輸入英文單字…">
+                            <button class="spelling-submit" id="q-submit">送出</button>
+                        </div>
+                    </div>
+
+                    <!-- 選擇題型 -->
+                    <div id="q-choice" hidden>
+                        <p class="quiz-question-label">選出這個單字的中文意思</p>
+                        <p class="quiz-question-word" id="q-word"></p>
+                        <div class="quiz-options" id="q-options"></div>
+                    </div>
+
+                    <div class="quiz-feedback" id="q-feedback"></div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button class="quiz-next-btn" id="q-next" disabled>下一題</button>
+                </div>
+            </div>
+
+            <!-- 結果 -->
+            <div id="quiz-results" class="quiz-results" hidden>
+                <h2>測驗結果</h2>
+                <div class="quiz-score-circle">
+                    <span class="quiz-score" id="result-score">0%</span>
+                </div>
+                <div class="quiz-stats">
+                    <span>答對：<strong id="result-correct">0</strong></span>
+                    <span>答錯：<strong id="result-wrong">0</strong></span>
+                </div>
+                <p class="modal-subtitle" id="result-msg"></p>
+                <div class="review-list" id="result-review"></div>
+                <div class="quiz-actions">
+                    <button class="quiz-retry-btn" id="result-retry">再測一次</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gradeSelect = document.getElementById('grade-select');
+            const weekSelect = document.getElementById('week-select');
+            const startBtn = document.getElementById('start-quiz');
+
+            const modal = document.getElementById('quiz-modal');
+            const body = document.getElementById('quiz-body');
+            const results = document.getElementById('quiz-results');
+
+            const subtitleEl = document.getElementById('quiz-subtitle');
+            const progressFill = document.getElementById('quiz-progress-fill');
+            const progressText = document.getElementById('quiz-progress-text');
+
+            const typeBadge = document.getElementById('q-type');
+            const dictationBox = document.getElementById('q-dictation');
+            const choiceBox = document.getElementById('q-choice');
+            const playBtn = document.getElementById('q-play');
+            const hintEl = document.getElementById('q-hint');
+            const inputEl = document.getElementById('q-input');
+            const submitBtn = document.getElementById('q-submit');
+            const wordEl = document.getElementById('q-word');
+            const optionsEl = document.getElementById('q-options');
+            const feedbackEl = document.getElementById('q-feedback');
+            const nextBtn = document.getElementById('q-next');
+
+            // 資料快取與狀態
+            const gradeCache = {};          // grade -> parsed json
+            let currentGradeData = null;    // 目前年級資料
+            let allGradeWords = [];         // 目前年級全部單字（作為選擇題干擾選項池）
+            let selectedGrade = '';
+            let selectedWeek = '';
+            let quiz = null;
+
+            // ============================================
+            // TTS（語音播放）
+            // ============================================
+            const ttsSupported = 'speechSynthesis' in window;
+            let ttsVoices = [];
+
+            function loadVoices() { ttsVoices = ttsSupported ? speechSynthesis.getVoices() : []; }
+            if (ttsSupported) {
+                loadVoices();
+                speechSynthesis.onvoiceschanged = loadVoices;
+            }
+
+            function getPreferredVoice() {
+                if (!ttsSupported) return null;
+                if (ttsVoices.length === 0) ttsVoices = speechSynthesis.getVoices();
+                return ttsVoices.find(v => v.lang === 'en-US' && v.name.includes('Google'))
+                    || ttsVoices.find(v => v.lang === 'en-US')
+                    || ttsVoices.find(v => v.lang.startsWith('en'))
+                    || ttsVoices[0] || null;
+            }
+
+            function speakWord(text, rate = 0.75) {
+                if (!ttsSupported || !text) return Promise.resolve();
+                return new Promise(resolve => {
+                    speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = 'en-US';
+                    u.rate = rate;
+                    u.pitch = 1.0;
+                    const voice = getPreferredVoice();
+                    if (voice) u.voice = voice;
+                    const done = () => { clearTimeout(timer); resolve(); };
+                    const timer = setTimeout(done, 10000);
+                    u.onend = done;
+                    u.onerror = done;
+                    speechSynthesis.speak(u);
+                });
+            }
+
+            // ============================================
+            // 載入資料
+            // ============================================
+            async function loadGrade(grade) {
+                if (gradeCache[grade]) return gradeCache[grade];
+                const res = await fetch(`./document/grade${grade}.json`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                gradeCache[grade] = data;
+                return data;
+            }
+
+            gradeSelect.addEventListener('change', async () => {
+                selectedGrade = gradeSelect.value;
+                selectedWeek = '';
+                weekSelect.innerHTML = '<option value="">--請選擇--</option>';
+                weekSelect.disabled = true;
+                startBtn.disabled = true;
+                if (!selectedGrade) return;
+
+                weekSelect.innerHTML = '<option value="">載入中…</option>';
+                try {
+                    currentGradeData = await loadGrade(selectedGrade);
+                    allGradeWords = currentGradeData.weeks.flatMap(w => w.content);
+                    weekSelect.innerHTML = '<option value="">--請選擇--</option>';
+                    currentGradeData.weeks.forEach(w => {
+                        const opt = document.createElement('option');
+                        opt.value = w.week;
+                        const n = w.content.length;
+                        opt.textContent = `第 ${w.week} 週（${n} 字）`;
+                        weekSelect.appendChild(opt);
+                    });
+                    weekSelect.disabled = false;
+                } catch (err) {
+                    console.error(err);
+                    weekSelect.innerHTML = '<option value="">--載入失敗--</option>';
+                }
+            });
+
+            weekSelect.addEventListener('change', () => {
+                selectedWeek = weekSelect.value;
+                startBtn.disabled = !(selectedGrade && selectedWeek);
+            });
+
+            // ============================================
+            // 建立題目
+            // ============================================
+            function answerKey(word) {
+                // 去除資料中的註記，如 "not (again)" -> "not"
+                return String(word).replace(/\s*\([^)]*\)\s*/g, ' ').trim();
+            }
+
+            function normalize(str) {
+                return String(str)
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]/g, '')
+                    .trim();
+            }
+
+            function shuffle(arr) {
+                const a = arr.slice();
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            function buildQuestions(weekData) {
+                const words = weekData.content;
+                const questions = [];
+
+                words.forEach(w => {
+                    // 聽寫題
+                    questions.push({
+                        type: 'dictation',
+                        word: w.word,
+                        answer: answerKey(w.word),
+                        phonetic: w.phonetic || '',
+                        chinese: w.chinese || '',
+                        sentence: w.sentence || ''
+                    });
+
+                    // 詞義選擇題
+                    const correct = w.chinese || '';
+                    const pool = allGradeWords
+                        .filter(x => x.chinese && x.chinese !== correct && x.word !== w.word)
+                        .map(x => x.chinese);
+                    const distractors = shuffle([...new Set(pool)]).slice(0, 3);
+                    questions.push({
+                        type: 'choice',
+                        word: w.word,
+                        phonetic: w.phonetic || '',
+                        answer: correct,
+                        options: shuffle([correct, ...distractors])
+                    });
+                });
+
+                return shuffle(questions);
+            }
+
+            // ============================================
+            // 測驗流程
+            // ============================================
+            function startQuiz() {
+                const weekData = currentGradeData.weeks.find(w => w.week.toString() === selectedWeek);
+                if (!weekData || !weekData.content.length) {
+                    alert('這個週次沒有單字資料。');
+                    return;
+                }
+                quiz = {
+                    title: `${currentGradeData.gradeName || selectedGrade + '年級'} 第 ${selectedWeek} 週`,
+                    questions: buildQuestions(weekData),
+                    index: 0,
+                    correct: 0,
+                    wrong: 0,
+                    answered: false,
+                    review: []
+                };
+
+                body.hidden = false;
+                results.hidden = true;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                subtitleEl.textContent = quiz.title;
+                renderQuestion();
+            }
+
+            function currentQuestion() { return quiz.questions[quiz.index]; }
+
+            function renderQuestion() {
+                const q = currentQuestion();
+                quiz.answered = false;
+
+                const total = quiz.questions.length;
+                progressFill.style.width = `${(quiz.index / total) * 100}%`;
+                progressText.textContent = `第 ${quiz.index + 1} 題 / 共 ${total} 題`;
+
+                feedbackEl.className = 'quiz-feedback';
+                feedbackEl.textContent = '';
+                nextBtn.disabled = true;
+                nextBtn.textContent = quiz.index === total - 1 ? '查看結果' : '下一題';
+
+                if (q.type === 'dictation') {
+                    typeBadge.textContent = '聽寫';
+                    typeBadge.className = 'quiz-type-badge dictation';
+                    dictationBox.hidden = false;
+                    choiceBox.hidden = true;
+                    hintEl.innerHTML = '按喇叭聽發音，然後拼出單字';
+                    inputEl.value = '';
+                    inputEl.disabled = false;
+                    submitBtn.disabled = false;
+                    setTimeout(() => inputEl.focus(), 50);
+                    speakWord(q.answer);
+                } else {
+                    typeBadge.textContent = '詞義選擇';
+                    typeBadge.className = 'quiz-type-badge choice';
+                    dictationBox.hidden = true;
+                    choiceBox.hidden = false;
+                    if (ttsSupported) speechSynthesis.cancel();
+                    wordEl.textContent = q.word;
+                    optionsEl.innerHTML = q.options.map((opt, i) => `
+                        <button class="quiz-option" type="button" data-index="${i}" data-correct="${opt === q.answer}">
+                            ${String.fromCharCode(65 + i)}. ${opt}
+                        </button>
+                    `).join('');
+                    optionsEl.querySelectorAll('.quiz-option').forEach(btn => {
+                        btn.addEventListener('click', () => handleChoiceAnswer(btn));
+                    });
+                }
+            }
+
+            function showHint() {
+                const q = currentQuestion();
+                const key = q.answer || q.word;
+                const first = key.charAt(0);
+                const masked = first + ' ' + '_ '.repeat(Math.max(0, key.replace(/\s/g, '').length - 1)).trim();
+                hintEl.innerHTML = `
+                    <span class="hint-word">${masked}</span><br>
+                    ${q.phonetic}　${q.chinese}
+                `;
+            }
+
+            // 聽寫：送出答案
+            function submitDictation() {
+                if (quiz.answered) return;
+                const q = currentQuestion();
+                const user = inputEl.value.trim();
+                if (!user) { inputEl.focus(); return; }
+                quiz.answered = true;
+
+                const ok = normalize(user) === normalize(q.answer);
+                inputEl.disabled = true;
+                submitBtn.disabled = true;
+
+                if (ok) {
+                    quiz.correct++;
+                    feedbackEl.className = 'quiz-feedback visible correct';
+                    feedbackEl.textContent = `正確！${q.answer}${q.chinese ? '（' + q.chinese + '）' : ''}`;
+                } else {
+                    quiz.wrong++;
+                    feedbackEl.className = 'quiz-feedback visible incorrect';
+                    feedbackEl.textContent = `錯誤。正確拼法：${q.answer}`;
+                    quiz.review.push({ word: q.word, type: 'dictation', user, answer: q.answer });
+                }
+                nextBtn.disabled = false;
+                nextBtn.focus();
+            }
+
+            // 選擇：作答
+            function handleChoiceAnswer(btn) {
+                if (quiz.answered) return;
+                quiz.answered = true;
+                const q = currentQuestion();
+                const isCorrect = btn.dataset.correct === 'true';
+
+                optionsEl.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.disabled = true;
+                    if (opt.dataset.correct === 'true') opt.classList.add('correct');
+                });
+
+                if (isCorrect) {
+                    quiz.correct++;
+                    feedbackEl.className = 'quiz-feedback visible correct';
+                    feedbackEl.textContent = '正確！';
+                } else {
+                    btn.classList.add('incorrect');
+                    quiz.wrong++;
+                    feedbackEl.className = 'quiz-feedback visible incorrect';
+                    feedbackEl.textContent = `錯誤。正確答案：${q.answer}`;
+                    quiz.review.push({ word: q.word, type: 'choice', user: (btn.textContent.split('. ')[1] || '').trim(), answer: q.answer });
+                }
+                nextBtn.disabled = false;
+                nextBtn.focus();
+            }
+
+            function nextQuestion() {
+                if (!quiz.answered) return;
+                quiz.index++;
+                if (quiz.index >= quiz.questions.length) {
+                    showResults();
+                } else {
+                    renderQuestion();
+                }
+            }
+
+            function showResults() {
+                body.hidden = true;
+                results.hidden = false;
+                const total = quiz.questions.length;
+                const pct = total ? Math.round((quiz.correct / total) * 100) : 0;
+                document.getElementById('result-score').textContent = `${pct}%`;
+                document.getElementById('result-correct').textContent = quiz.correct;
+                document.getElementById('result-wrong').textContent = quiz.wrong;
+
+                let msg;
+                if (pct === 100) msg = '太厲害了！全部答對！';
+                else if (pct >= 80) msg = '很棒！再複習少數幾個單字就完美了。';
+                else if (pct >= 60) msg = '不錯，多練習幾次會更熟練。';
+                else msg = '別灰心，再聽幾次、多寫幾遍就會記住！';
+                document.getElementById('result-msg').textContent = `${quiz.title}　${msg}`;
+
+                const reviewEl = document.getElementById('result-review');
+                if (quiz.review.length === 0) {
+                    reviewEl.innerHTML = '<div class="review-item"><span class="r-word">全部正確</span><span class="r-answer">沒有任何錯題 🎉</span></div>';
+                } else {
+                    reviewEl.innerHTML = quiz.review.map(r => `
+                        <div class="review-item wrong">
+                            <span class="r-word">${r.word}</span>
+                            <span class="r-answer">你的答案：${r.user || '（空白）'} → 正確：${r.answer}</span>
+                        </div>
+                    `).join('');
+                }
+                if (ttsSupported) speechSynthesis.cancel();
+            }
+
+            function closeQuiz() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (ttsSupported) speechSynthesis.cancel();
+            }
+
+            // ============================================
+            // 事件綁定
+            // ============================================
+            startBtn.addEventListener('click', startQuiz);
+            nextBtn.addEventListener('click', nextQuestion);
+            submitBtn.addEventListener('click', submitDictation);
+            document.getElementById('result-retry').addEventListener('click', startQuiz);
+            document.getElementById('quiz-close').addEventListener('click', closeQuiz);
+            playBtn.addEventListener('click', () => {
+                if (currentQuestion() && currentQuestion().type === 'dictation') speakWord(currentQuestion().answer);
+            });
+
+            // 聽寫：Enter 送出 / 送出後 Enter 下一題
+            inputEl.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (quiz && quiz.answered) nextQuestion();
+                    else submitDictation();
+                }
+            });
+
+            // 「提示」按鈕（動態加在聽寫輸入旁）
+            const hintBtn = document.createElement('button');
+            hintBtn.type = 'button';
+            hintBtn.className = 'spelling-submit';
+            hintBtn.textContent = '提示';
+            hintBtn.style.background = 'var(--warning)';
+            hintBtn.addEventListener('click', showHint);
+            document.querySelector('.spelling-input-area').appendChild(hintBtn);
+
+            // Esc 關閉
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) closeQuiz();
+            });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeQuiz();
+            });
+        });
+    </script>
+</body>
+</html>
