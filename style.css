@@ -1,289 +1,597 @@
-/* :root 定義全域 CSS 變數 */
+/* ============================================
+   BASE & VARIABLES
+   ============================================ */
 :root {
-    --primary-color: #00529B;
-    --primary-color-light: #e7f5ff;
-    --secondary-color: #007bff;
-    --secondary-color-hover: #0056b3;
-    --danger-color: #dc3545;
-    --danger-color-hover: #c82333;
-    --warning-color: #FFC107;
-    --warning-color-hover: #FFD54F;
-
-    --text-color-main: #333;
-    --text-color-subtle: #666;
-    --border-color: #e0e0e0;
-    --background-soft: #f4f7f9;
-    --background-white: #fff;
-    --border-radius-main: 8px;
+    --primary: #6366F1;
+    --primary-light: #EEF2FF;
+    --success: #10B981;
+    --success-light: #D1FAE5;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --danger-light: #FEE2E2;
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --text: #1E293B;
+    --text-secondary: #64748B;
+    --border: #E2E8F0;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
-/* 基本樣式 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--background-soft);
-    color: var(--text-color-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
-    margin: 0;
 }
 
+/* ============================================
+   HEADER
+   ============================================ */
 header {
     text-align: center;
-    padding: 15px 10px;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 1%;
+    padding: 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
 }
 
-h1 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    margin: 0 0 10px 0;
-}
+header h1 { color: var(--primary); font-size: 1.75rem; margin-bottom: 4px; }
+header p { color: var(--text-secondary); font-size: 0.9rem; }
 
-header p {
-    color: var(--text-color-subtle);
-    font-size: 1rem;
-}
-
-/* 控制項樣式 */
+/* ============================================
+   CONTROLS
+   ============================================ */
 .controls {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    background-color: var(--background-white);
-    padding: 10px;
-    border-radius: var(--border-radius-main);
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 16px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-.select-group label {
-    margin-right: 8px;
-    font-weight: bold;
-    color: #555;
+.select-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
+.select-group label { font-weight: 600; color: var(--text-secondary); }
 
 .select-group select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-main);
-    font-size: 16px;
-    background-color: #f9f9f9;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 10px;
-    padding-right: 30px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--surface);
     cursor: pointer;
+    min-width: 120px;
 }
 
-/* 單字卡片容器 */
-#word-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+.select-group select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
-#word-list .message {
-    grid-column: 1 / -1;
-    text-align: center;
+/* ============================================
+   ACTIVITY BAR
+   ============================================ */
+.activity-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    flex-wrap: wrap;
 }
 
-/* 單字卡片樣式 */
-.word-card {
-    background-color: var(--background-white);
-    border-radius: var(--border-radius-main);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    padding: 20px;
+.activity-btn {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 80px;
 }
 
-.word-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+.activity-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
-.word-info {
+.activity-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.activity-label { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+
+/* ============================================
+   WORD LIST
+   ============================================ */
+.word-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.word-list-container .message {
+    grid-column: 1 / -1;
     text-align: center;
-    width: 100%;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
 }
+
+.word-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.word-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 .word-card .english {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 0 0 5px 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
 }
 
-.word-card .phonetic {
-    font-size: 1.1rem;
-    color: var(--text-color-subtle);
-    margin: 0 0 10px 0;
-}
-
-.word-card .details {
-    font-size: 1.3rem;
-    color: #34495e;
-    margin: 0;
-}
-
+.word-card .phonetic { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+.word-card .details { font-size: 1.1rem; margin-bottom: 8px; }
 .word-card .pos {
     display: inline-block;
-    background-color: var(--primary-color-light);
-    color: var(--primary-color);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-right: 8px;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 6px;
 }
+.word-card .sentence { color: var(--text-secondary); font-size: 0.9rem; font-style: italic; }
 
-.word-card .sentence {
-    font-size: 1rem;
-    color: #777;
-    margin: 10px 0 0 0;
-    font-style: italic;
-}
-
-/* 播放按鈕 */
 .play-audio-btn {
-    background-color: var(--warning-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary);
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    font-size: 1.25rem;
     cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
-    align-self: center;
-    transition: background-color 0.2s;
+    justify-content: center;
+    margin-top: 12px;
+    transition: var(--transition);
 }
 
-.play-audio-btn:hover {
-    background-color: var(--warning-color-hover);
-}
+.play-audio-btn:hover { transform: scale(1.1); }
+.play-audio-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.play-audio-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-/* --- 教學模式控制按鈕樣式 --- */
-#toggle-teaching-mode {
-    padding: 8px 16px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-main);
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    background-color: var(--secondary-color);
-    color: white;
-    border-color: var(--secondary-color);
-}
-
-#toggle-teaching-mode:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: var(--secondary-color-hover);
-    border-color: var(--secondary-color-hover);
-    color: white;
-}
-
-/* 當 Modal 彈出時，「結束教學」按鈕的樣式 */
-.modal-open #toggle-teaching-mode {
-    background-color: var(--danger-color);
-    border-color: var(--danger-color);
-}
-.modal-open #toggle-teaching-mode:hover {
-    background-color: var(--danger-color-hover);
-    border-color: var(--danger-color-hover);
-}
-
-/* --- Modal (教學模式彈出視窗) 樣式 --- */
+/* ============================================
+   MODAL OVERLAY
+   ============================================ */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--background-white);
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
     display: none;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     z-index: 1000;
+    padding: 20px;
 }
+
+.modal-overlay.active { display: flex; }
 
 .modal-content {
-    position: relative;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    max-width: 600px;
     width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.modal-close:hover { background: var(--border); }
+.modal-close:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.modal-content h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.modal-subtitle { color: var(--text-secondary); margin-bottom: 20px; }
+
+/* ============================================
+   QUIZ STYLES
+   ============================================ */
+.quiz-header { margin-bottom: 24px; }
+
+.quiz-progress { margin-top: 12px; }
+
+.quiz-progress-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.quiz-progress-fill {
     height: 100%;
+    background: var(--primary);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.quiz-progress-text { font-size: 0.85rem; color: var(--text-secondary); }
+
+.quiz-question { text-align: center; margin-bottom: 24px; }
+.quiz-question-label { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+.quiz-question-word { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+
+.quiz-options { display: flex; flex-direction: column; gap: 12px; }
+
+.quiz-option {
+    padding: 16px 20px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.quiz-option:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-light); }
+.quiz-option:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.quiz-option.correct { border-color: var(--success); background: var(--success-light); }
+.quiz-option.incorrect { border-color: var(--danger); background: var(--danger-light); }
+.quiz-option:disabled { cursor: default; }
+
+.quiz-feedback {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.quiz-feedback.visible { display: block; }
+.quiz-feedback.correct { background: var(--success-light); color: var(--success); }
+.quiz-feedback.incorrect { background: var(--danger-light); color: var(--danger); }
+
+.quiz-actions { margin-top: 20px; text-align: center; }
+
+.quiz-next-btn, .quiz-retry-btn {
+    padding: 12px 32px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quiz-next-btn:hover:not(:disabled), .quiz-retry-btn:hover { opacity: 0.9; }
+.quiz-next-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.quiz-next-btn:focus-visible, .quiz-retry-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.quiz-results { text-align: center; padding: 20px 0; }
+
+.quiz-score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.quiz-score { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+
+.quiz-stats {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 32px;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
 }
 
-/* Modal 內的單字卡列表容器 */
-.modal-content #word-list {
-    min-height: initial;
-    grid-template-columns: 1fr;
+/* ============================================
+   MATCHING GAME STYLES
+   ============================================ */
+.matching-game {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-/* Modal 內的單字卡 */
-.modal-content .word-card {
-    display: none;
-    max-width: 600px;
-    width: 90%;
-    transform: translateY(0);
-    border: none;
-    box-shadow: none;
-}
-
-.modal-content .word-card:hover {
-    transform: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.modal-content .word-card.active {
-    display: flex;
-}
-
-.modal-content .word-card .english {
-    font-size: 18rem;
-    line-height: 1.2;
-    white-space: nowrap;
-}
-
-/* Modal 的關閉按鈕 */
-.modal-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: var(--text-color-main);
-    background: none;
-    border: none;
+.matching-card {
+    padding: 16px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
     cursor: pointer;
-    transition: transform 0.2s;
+    text-align: center;
+    font-weight: 600;
+    transition: var(--transition);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.modal-close-btn:hover {
-    transform: scale(1.2);
+.matching-card:hover:not(.matched) { border-color: var(--primary); }
+.matching-card.selected { border-color: var(--primary); background: var(--primary-light); }
+.matching-card.matched { border-color: var(--success); background: var(--success-light); cursor: default; }
+.matching-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.matching-progress { text-align: center; color: var(--text-secondary); font-weight: 600; }
+
+/* ============================================
+   SPELLING BEE STYLES
+   ============================================ */
+.spelling-hint {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius);
+}
+
+.spelling-input-area {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.spelling-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+}
+
+.spelling-input:focus { outline: none; border-color: var(--primary); }
+
+.spelling-submit {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.spelling-submit:hover { opacity: 0.9; }
+
+.spelling-feedback {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.spelling-feedback.visible { display: block; }
+.spelling-feedback.correct { background: var(--success-light); color: var(--success); }
+.spelling-feedback.incorrect { background: var(--danger-light); color: var(--danger); }
+
+.spelling-progress { text-align: center; color: var(--text-secondary); }
+
+/* ============================================
+   FLASHCARD RACE STYLES
+   ============================================ */
+.race-timer {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-variant-numeric: tabular-nums;
+}
+
+.race-timer.warning { color: var(--danger); }
+
+.race-card {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.race-word { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.race-meaning { font-size: 1.25rem; color: var(--text-secondary); }
+
+.race-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.race-btn {
+    padding: 12px 32px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.race-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+#race-know { background: var(--success); color: white; }
+#race-dont-know { background: var(--danger); color: white; }
+
+.race-score { text-align: center; font-size: 1.25rem; font-weight: 700; color: var(--text-secondary); }
+
+/* ============================================
+   WORD SEARCH STYLES
+   ============================================ */
+.word-search-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.word-search-grid {
+    display: grid;
+    gap: 2px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.word-search-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.word-search-cell:hover { background: var(--primary-light); }
+.word-search-cell.selected { background: var(--primary); color: white; }
+.word-search-cell.found { background: var(--success-light); color: var(--success); }
+
+.word-search-list {
+    min-width: 150px;
+}
+
+.word-search-list h3 { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 8px; }
+
+.word-search-list ul { list-style: none; }
+
+.word-search-list li {
+    padding: 4px 0;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.word-search-list li.found { color: var(--success); text-decoration: line-through; }
+
+/* ============================================
+   MEMORY MATCH STYLES
+   ============================================ */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: var(--primary);
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+}
+
+.memory-card:hover:not(.flipped):not(.matched) { opacity: 0.9; }
+.memory-card.flipped { background: var(--surface); color: var(--text); border: 2px solid var(--primary); }
+.memory-card.matched { background: var(--success-light); color: var(--success); border: 2px solid var(--success); cursor: default; }
+.memory-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.memory-progress { text-align: center; color: var(--text-secondary); font-weight: 600; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .controls { flex-direction: column; align-items: stretch; }
+    .select-group { justify-content: space-between; }
+    .activity-bar { gap: 8px; }
+    .activity-btn { min-width: 60px; padding: 8px 12px; }
+    .modal-content { padding: 20px; }
+    .quiz-question-word { font-size: 1.75rem; }
+    .memory-grid { grid-template-columns: repeat(3, 1fr); }
+    .spelling-input-area { flex-direction: column; }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
