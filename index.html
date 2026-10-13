@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文單字學習網 — Glassmorphism Anime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <div class="header-logo" aria-hidden="true">V</div>
+                <div>
+                    <h1 class="header-title">英文單字學習網</h1>
+                    <p class="header-subtitle">臺中市清水區槺榔國民小學</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="select-group">
+            <label for="grade-select">選擇年級：</label>
+            <select id="grade-select">
+                <option value="">--請選擇--</option>
+                <option value="3">三年級</option>
+                <option value="4">四年級</option>
+                <option value="5">五年級</option>
+                <option value="6">六年級</option>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="week-select">選擇週次：</label>
+            <select id="week-select">
+                <option value="">--請選擇--</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Word List -->
+    <main id="word-list" class="word-list-container" role="main">
+        <p class="message">請選擇年級與週次來開始學習</p>
+    </main>
+
+    <!-- Activity Bar -->
+    <div id="activity-bar" class="activity-bar" style="display: none;">
+        <button class="activity-btn" data-activity="quiz">
+            <span class="activity-icon">?</span>
+            <span class="activity-label">隨堂測驗</span>
+        </button>
+        <button class="activity-btn" data-activity="matching">
+            <span class="activity-icon">&#8596;</span>
+            <span class="activity-label">配對遊戲</span>
+        </button>
+        <button class="activity-btn" data-activity="spelling">
+            <span class="activity-icon">Aa</span>
+            <span class="activity-label">拼字蜜蜂</span>
+        </button>
+        <button class="activity-btn" data-activity="race">
+            <span class="activity-icon">&#9201;</span>
+            <span class="activity-label">閃卡競速</span>
+        </button>
+        <button class="activity-btn" data-activity="search">
+            <span class="activity-icon">&#8862;</span>
+            <span class="activity-label">單字搜索</span>
+        </button>
+        <button class="activity-btn" data-activity="memory">
+            <span class="activity-icon">&#9829;</span>
+            <span class="activity-label">記憶配對</span>
+        </button>
+        <button class="activity-btn" data-activity="dictation">
+            <span class="activity-icon">&#9998;</span>
+            <span class="activity-label">聽寫測驗</span>
+        </button>
+    </div>
+
+    <!-- ===== Activity Modals ===== -->
+    <!-- Quiz -->
+    <div id="quiz-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="quiz-title" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="quiz-modal" aria-label="關閉">&times;</button>
+            <h2 id="quiz-title">隨堂測驗</h2>
+            <p class="modal-subtitle">從選項中選出單字正確的中文意思</p>
+            <div class="quiz-header" id="quiz-header">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+                    <p class="quiz-progress-text" id="quiz-progress-text"></p>
+                </div>
+            </div>
+            <div class="quiz-question" id="quiz-question">
+                <p class="quiz-question-label">選出這個單字的中文意思</p>
+                <p class="quiz-question-word" id="quiz-question-word"></p>
+                <div class="quiz-options" id="quiz-options"></div>
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+            </div>
+            <div class="quiz-results" id="quiz-results" style="display: none;">
+                <div class="quiz-score-circle"><span class="quiz-score" id="quiz-score">0%</span></div>
+                <div class="quiz-stats">
+                    <span>答對：<strong id="quiz-correct">0</strong></span>
+                    <span>答錯：<strong id="quiz-wrong">0</strong></span>
+                </div>
+                <button id="view-history-btn" style="width: 100%; margin-top: 10px; padding: 8px; background: var(--gradient-blue-cyan); color: white; border: none; border-radius: var(--radius-md); font-size: 0.9rem; cursor: pointer;">查看歷史分數</button>
+            </div>
+            <div class="quiz-actions" id="quiz-actions">
+                <button class="quiz-next-btn" id="quiz-next-btn" disabled>下一題</button>
+                <button class="quiz-retry-btn" id="quiz-retry-btn" style="display: none;">再測一次</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score History -->
+    <div id="score-history-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="score-history-title" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="score-history-modal" aria-label="關閉">&times;</button>
+            <h2 id="score-history-title">歷史分數</h2>
+            <p class="modal-subtitle">從過去的測驗中查看您的表現</p>
+            <div class="score-history-list" id="score-history-list">
+                <p class="message">尚未有測驗紀錄</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matching -->
+    <div id="matching-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="matching-modal" aria-label="關閉">&times;</button>
+            <h2>配對遊戲</h2>
+            <p class="modal-subtitle">將英文單字與中文意思配對</p>
+            <div class="matching-game" id="matching-game"></div>
+            <p class="matching-progress" id="matching-progress"></p>
+        </div>
+    </div>
+
+    <!-- Spelling -->
+    <div id="spelling-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="spelling-modal" aria-label="關閉">&times;</button>
+            <h2>拼字蜜蜂</h2>
+            <p class="modal-subtitle">根據提示拼出正確的英文單字</p>
+            <div class="spelling-hint" id="spelling-hint"></div>
+            <div class="spelling-input-area">
+                <input type="text" class="spelling-input" id="spelling-input"
+                       autocomplete="off" autocorrect="off" autocapitalize="off"
+                       spellcheck="false" placeholder="請輸入英文單字…">
+                <button class="spelling-submit" id="spelling-submit">送出</button>
+            </div>
+            <div class="spelling-feedback" id="spelling-feedback"></div>
+            <p class="spelling-progress" id="spelling-progress"></p>
+        </div>
+    </div>
+
+    <!-- Race -->
+    <div id="race-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="race-modal" aria-label="關閉">&times;</button>
+            <h2>閃卡競速</h2>
+            <p class="modal-subtitle">在時間內判斷你是否認識這個單字</p>
+            <div class="race-timer" id="race-timer">30</div>
+            <div class="race-card">
+                <div class="race-word" id="race-word"></div>
+                <div class="race-meaning" id="race-meaning"></div>
+            </div>
+            <div class="race-controls">
+                <button class="race-btn" id="race-know">我認識</button>
+                <button class="race-btn" id="race-dont-know">不認識</button>
+            </div>
+            <p class="race-score" id="race-score"></p>
+        </div>
+    </div>
+
+    <!-- Word Search -->
+    <div id="search-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="search-modal" aria-label="關閉">&times;</button>
+            <h2>單字搜索</h2>
+            <p class="modal-subtitle">依序點選字母方格，找出隱藏的單字</p>
+            <div class="word-search-container">
+                <div class="word-search-grid" id="word-search-grid"></div>
+                <div class="word-search-list" id="word-search-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory -->
+    <div id="memory-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="memory-modal" aria-label="關閉">&times;</button>
+            <h2>記憶配對</h2>
+            <p class="modal-subtitle">翻開兩張卡片，找出英文與中文的配對</p>
+            <div class="memory-grid" id="memory-grid"></div>
+            <p class="memory-progress" id="memory-progress"></p>
+        </div>
+    </div>
+
+    <!-- Dictation -->
+    <div id="dictation-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dictation-title" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="dictation-modal" aria-label="關閉">&times;</button>
+            <div id="dictation-body">
+                <div class="quiz-header">
+                    <h2 id="dictation-title">每週聽寫測驗</h2>
+                    <p class="modal-subtitle" id="d-subtitle"></p>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="d-progress-fill"></div></div>
+                        <p class="quiz-progress-text" id="d-progress-text"></p>
+                    </div>
+                </div>
+                <div class="quiz-question">
+                    <span class="quiz-type-badge" id="d-type"></span>
+                    <div id="d-dictation">
+                        <div class="dictation-player">
+                            <button class="play-word-btn" id="d-play" aria-label="播放單字發音">&#128266;</button>
+                            <div class="hint-line" id="d-hint"></div>
+                        </div>
+                        <div class="spelling-input-area">
+                            <input type="text" class="spelling-input" id="d-input"
+                                   autocomplete="off" autocorrect="off" autocapitalize="off"
+                                   spellcheck="false" placeholder="請輸入英文單字…">
+                            <button class="spelling-submit hint-btn" id="d-hint-btn" type="button">提示</button>
+                            <button class="spelling-submit" id="d-submit" type="button">送出</button>
+                        </div>
+                    </div>
+                    <div id="d-choice" hidden>
+                        <p class="quiz-question-label">選出這個單字的中文意思</p>
+                        <p class="quiz-question-word" id="d-word"></p>
+                        <div class="quiz-options" id="d-options"></div>
+                    </div>
+                    <div class="quiz-feedback" id="d-feedback"></div>
+                </div>
+                <div class="quiz-actions">
+                    <button class="quiz-next-btn" id="d-next" disabled>下一題</button>
+                </div>
+            </div>
+            <div id="dictation-results" class="quiz-results" hidden>
+                <h2>測驗結果</h2>
+                <div class="quiz-score-circle"><span class="quiz-score" id="d-score">0%</span></div>
+                <div class="quiz-stats">
+                    <span>答對：<strong id="d-correct">0</strong></span>
+                    <span>答錯：<strong id="d-wrong">0</strong></span>
+                </div>
+                <p class="modal-subtitle" id="d-msg"></p>
+                <div class="review-list" id="d-review"></div>
+                <div class="quiz-actions">
+                    <button class="quiz-retry-btn" id="d-retry" type="button">再測一次</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
