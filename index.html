@@ -2844,19 +2844,5 @@
             });
         });
     </script>
-    <script>
-  // 允許跨域請求
-  async function fetchWithCORS(url, options = {}) {
-    const response = await fetch(url, {
-      ...options,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        ...options.headers,
-      },
-    });
-    return response;
-  }
-  // 可用 fetchWithCORS 替換原本的 fetch
-</script>
 </body>
 </html>

@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Google Apps Script 部署 URL（請填入您部署後的真實 URL）
         // 注意：請確認您的 Google Apps Script 已正確部署，並開啟 'Anyone with the link' 權限
-        const backendUrl = 'https://script.google.com/macros/s/AKfycbz8jgNiPiAQX2sr_21rdgR3CoZZcioAdp1wcyRYlniXpj-pq--xMrL_OWWLNU73uNWK/exec';
+        const backendUrl = 'https://script.google.com/macros/s/AKfycbyWjVeythAgqskGXxeFMrvQ8J--caS-57PqJhvOPJNhQNWAWbKuBG61mWCoOoFfei-V/exec';
 
         // 建立表單資料
         const formData = new URLSearchParams();
