@@ -294,10 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================
-    // 【核心】showQuizResults - 自動傳送分數到 Google Sheets
+    // 【核心】showQuizResults - 顯示測驗結果
     // ============================================
     function showQuizResults() {
-        // 隱介介面
+        // 隱介面
         document.querySelector('.quiz-header').style.display = 'none';
         document.querySelector('.quiz-question').style.display = 'none';
         document.getElementById('quiz-options').style.display = 'none';
@@ -312,85 +312,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('quiz-score').textContent = `${pct}%`;
         document.getElementById('quiz-correct').textContent = quizState.correct;
         document.getElementById('quiz-wrong').textContent = quizState.wrong;
-
-        // ============================================
-        // 關鍵程式碼：將分數傳送到 Google Sheets
-        // ============================================
-        // 讀取年級與週次（從 HTML 的下拉選單抓取）
-        const gradeSelect = document.getElementById('grade-select');
-        const weekSelect = document.getElementById('week-select');
         
-        // 確認元素是否存在，防止報錯
-        const selectedGrade = gradeSelect ? gradeSelect.value : '未知';
-        const selectedWeek = weekSelect ? weekSelect.value : '未知';
-        
-        // 檢查是否已選擇年級和週次
-        if (!selectedGrade || selectedGrade === '未知') {
-            displayMessage('請先選擇年級後再提交分數。');
-            return;
-        }
-        if (!selectedWeek || selectedWeek === '未知') {
-            displayMessage('請先選擇週次後再提交分數。');
-            return;
-        }
-
-        // Google Apps Script 部署 URL（請填入您部署後的真實 URL）
-        // 注意：請確認您的 Google Apps Script 已正確部署，並開啟 'Anyone with the link' 權限
-        const backendUrl = 'https://script.google.com/macros/s/AKfycbyWjVeythAgqskGXxeFMrvQ8J--caS-57PqJhvOPJNhQNWAWbKuBG61mWCoOoFfei-V/exec';
-
-        // 建立表單資料
-        const formData = new URLSearchParams();
-        formData.append('grade', selectedGrade);
-        formData.append('week', selectedWeek);
-        formData.append('score', pct);
-        formData.append('title', '每週測驗');
-        formData.append('name', '網站測驗系統');
-
-        // 發送 POST 請求
-        fetch(backendUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // 在分數下方顯示傳送訊息
-            const scoreDisplay = document.getElementById('quiz-score');
-            const scoreParent = scoreDisplay.parentNode;
-            
-            // 避免重複新增訊息
-            const existingMsg = scoreParent.querySelector('.score-send-status');
-            if (existingMsg) existingMsg.remove();
-            
-            const statusDiv = document.createElement('div');
-            statusDiv.className = 'score-send-status';
-            
-            if (data.status === 'success') {
-                statusDiv.innerHTML = `✅ 分數已傳送！（${pct}% - ${selectedGrade}年級 第${selectedWeek}週）`;
-            } else {
-                statusDiv.innerHTML = `❌ 傳送失敗：${data.message || '未知錯誤'}`;
-            }
-            
-            statusDiv.style.marginTop = '10px';
-            statusDiv.style.fontSize = '0.9rem';
-            statusDiv.style.color = data.status === 'success' ? 'green' : 'red';
-            
-            scoreParent.insertBefore(statusDiv, scoreDisplay.nextSibling);
-        })
-        .catch(error => {
-            console.error('傳送分數時發生錯誤:', error);
-            // 顯示網路錯誤訊息
-            const results = document.getElementById('quiz-results');
-            const errorMsg = document.createElement('div');
-            errorMsg.style.marginTop = '10px';
-            errorMsg.style.fontSize = '0.9rem';
-            errorMsg.style.color = 'red';
-            errorMsg.textContent = '❌ 網路錯誤，請開啟 F12 Console 查看詳情';
-            results.appendChild(errorMsg);
+        // 儲存分數到 IndexedDB
+        const selectedGrade = gradeSelect.value || '未知';
+        const selectedWeek = weekSelect.value || '未知';
+        saveScore(selectedGrade, selectedWeek, pct, quizState.correct, quizState.wrong).then(() => {
+            // 分數已儲存 (靜默成功)
+        }).catch(err => {
+            console.error('分數儲存失敗:', err);
         });
-        // ============================================
     }
     // ============================================
 
@@ -424,4 +354,156 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     gradeSelect.addEventListener('change', handleGradeChange);
     weekSelect.addEventListener('change', displayWordsForWeek);
-});
+
+    // 點擊「查看歷史分數」按鈕
+    document.getElementById('view-history-btn')?.addEventListener('click', () => {
+        getScores().then(scores => {
+            const historyList = document.getElementById('score-history-list');
+            const modal = document.getElementById('score-history-modal');
+            
+            if (scores.length === 0) {
+                historyList.innerHTML = '<p class="message">尚未有測驗紀錄</p>';
+                openModal('score-history-modal');
+                return;
+            }
+            
+            // 建立歷史列表 HTML
+            let html = '';
+            scores.forEach((score, index) => {
+                const date = new Date(score.date).toLocaleDateString('zh-TW');
+                html += `
+                    <div style="padding: 8px 12px; border-bottom: 1px solid var(--glass-border); transition: all 0.2s;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>第 ${score.week} 週 - ${score.grade}年級</span>
+                            <span style="color: var(--text-secondary); font-size: 0.8rem;">${date}</span>
+                        </div>
+                        <div style="flex: 1; margin-left: 12px; font-size: 1.2rem; text-align: right;">
+                            ${score.percentage}%
+                        </div>
+                    </div>
+                `;
+            });
+            
+            historyList.innerHTML = html;
+            openModal('score-history-modal');
+        }).catch(err => {
+            console.error('讀取歷史分數失敗:', err);
+            alert('讀取歷史分數時發生錯誤');
+        });
+    });
+}
+
+// ============================================
+// IndexedDB - 成績儲存系統
+// ============================================
+let db = null;
+
+// 初始化 IndexedDB
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open('QuizScoresDB', 1);
+        
+        request.onupgradeneeded = (event) => {
+            db = event.target.result;
+            if (!db.objectStoreNames.contains('scores')) {
+                const store = db.createObjectStore('scores', { keyPath: 'id', autoIncrement: true });
+                store.createIndex('by_grade_week', 'grade_week', { unique: true });
+                store.createIndex('by_date', 'date', { descending: true });
+            }
+        };
+        
+        request.onsuccess = (event) => {
+            db = event.target.result;
+            // 確保舊資料庫也有 index
+            if (!db.objectStoreNames.contains('scores')) {
+                initDB();
+            }
+            resolve();
+        };
+        
+        request.onerror = (event) => {
+            console.error('IndexedDB 初始化錯誤:', event.target.error);
+            reject(event.target.error);
+        };
+    });
+}
+
+// 等待 DB 就緒 (懶加載)
+async function $(selector) {
+    return document.querySelector(selector);
+}
+
+// 儲存分數到 IndexedDB
+async function saveScore(grade, week, pct, correct, wrong) {
+    if (!db) await initDB();
+    
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction('scores', 'readwrite');
+        const store = transaction.objectStore('scores');
+        
+        const scoreData = {
+            grade: grade,
+            week: week,
+            percentage: pct,
+            correct: correct,
+            wrong: wrong,
+            grade_week: `${grade}-${week}`,
+            date: new Date().toISOString(),
+            title: '每週測驗'
+        };
+        
+        const request = add(scoreData);
+        
+        request.onsuccess = (event) => {
+            resolve(event.target.result);
+        };
+        
+        request.onerror = (event) => {
+            console.error('儲存分數失敗:', event.target.error);
+            reject(event.target.error);
+        };
+    });
+}
+
+// 讀取分數歷史 (可選過濾 grade-week)
+async function getScores(filter = null) {
+    if (!db) await initDB();
+    
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction('scores', 'readonly');
+        const store = transaction.objectStore('scores');
+        
+        let request;
+        if (filter) {
+            request = store.index('by_grade_week').getAll(filter);
+        } else {
+            request = getAll(store);
+        }
+        
+        request.onsuccess = (event) => {
+            let scores = event.target.result;
+            // 按日期排序，最新在前
+            scores = scores.sort((a, b) => new Date(b.date) - new Date(a.date));
+            resolve(scores);
+        };
+        
+        request.onerror = (event) => {
+            console.error('讀取分數失敗:', event.target.error);
+            reject(event.target.error);
+        };
+    });
+}
+
+// 清除所有分數 (管理員用)
+async function clearAllScores() {
+    if (!db) await initDB();
+    
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction('scores', 'readwrite');
+        const store = transaction.objectStore('scores');
+        const request = store.clear();
+        
+        request.onsuccess = () => resolve('全部清除');
+        request.onerror = (event) => reject('清除失敗: ' + event.target.error);
+    });
+}

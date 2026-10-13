@@ -1413,10 +1413,23 @@
                     <span>答對：<strong id="quiz-correct">0</strong></span>
                     <span>答錯：<strong id="quiz-wrong">0</strong></span>
                 </div>
+                <button id="view-history-btn" style="width: 100%; margin-top: 10px; padding: 8px; background: var(--gradient-blue-cyan); color: white; border: none; border-radius: var(--radius-md); font-size: 0.9rem; cursor: pointer;">查看歷史分數</button>
             </div>
             <div class="quiz-actions" id="quiz-actions">
                 <button class="quiz-next-btn" id="quiz-next-btn" disabled>下一題</button>
                 <button class="quiz-retry-btn" id="quiz-retry-btn" style="display: none;">再測一次</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score History -->
+    <div id="score-history-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="score-history-title" aria-hidden="true">
+        <div class="a-panel">
+            <button class="modal-close" data-close="score-history-modal" aria-label="關閉">&times;</button>
+            <h2 id="score-history-title">歷史分數</h2>
+            <p class="modal-subtitle">從過去的測驗中查看您的表現</p>
+            <div class="score-history-list" id="score-history-list">
+                <p class="message">尚未有測驗紀錄</p>
             </div>
         </div>
     </div>
